@@ -1,1 +1,1 @@
-# Exam genrator
+# Exam generator
