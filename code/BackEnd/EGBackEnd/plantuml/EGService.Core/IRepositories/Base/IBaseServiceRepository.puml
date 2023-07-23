@@ -1,0 +1,9 @@
+@startuml
+interface "IBaseServiceRepository`2"<TEntity,TPrimeryKey> {
+}
+class "IBaseFrameworkRepository`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+"IBaseFrameworkRepository`2" "<TEntity,TPrimeryKey>" <|-- "IBaseServiceRepository`2"
+@enduml

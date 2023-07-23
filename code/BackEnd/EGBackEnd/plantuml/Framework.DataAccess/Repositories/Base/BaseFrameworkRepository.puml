@@ -1,0 +1,30 @@
+@startuml
+class "BaseFrameworkRepository`2"<TEntity,TPrimeryKey> {
+    + BaseFrameworkRepository(context:DbContext, currentUserService:ICurrentUserService)
+    + Dispose() : void
+    + <<virtual>> GetCount() : long
+    + <<virtual>> GetCount(predicate:Expression<Func<TEntity, bool>>) : long
+    + SetIncludedNavigationsList(source:IQueryable<TEntity>, list:IEnumerable<string>) : IQueryable<TEntity>
+    + SetSortOrder(source:IQueryable<TEntity>, sortOrder:string) : IQueryable<TEntity>
+    + SetPaginationCount(source:IQueryable<TEntity>, pagination:Pagination) : Pagination
+    + SetPagination(source:IQueryable<TEntity>, pagination:Pagination) : IQueryable<TEntity>
+    + <<virtual>> Get(conditionFilter:RepositoryRequestConditionFilter<TEntity, TPrimeryKey>) : IQueryable<TEntity>
+    + <<virtual>> Get(repositoryRequest:RepositoryRequest) : IQueryable<TEntity>
+    + <<virtual>> FirstOrDefault(predicate:Expression<Func<TEntity, bool>>, includedNavigationsList:string[]) : TEntity
+    + <<virtual>> Get(id:TPrimeryKey) : TEntity
+    + <<virtual>> Add(entityCollection:IEnumerable<TEntity>) : IList<TEntity>
+    + <<virtual>> Add(entity:TEntity) : TEntity
+    + <<virtual>> Update(entityCollection:IEnumerable<TEntity>) : IQueryable<TEntity>
+    + <<virtual>> Update(entity:TEntity) : TEntity
+    + <<virtual>> Delete(id:TPrimeryKey) : void
+    + <<virtual>> Delete(idCollection:IEnumerable<TPrimeryKey>) : void
+    + <<virtual>> Delete(entity:TEntity) : void
+    + <<virtual>> Delete(entityCollection:IEnumerable<TEntity>) : void
+}
+class "IBaseFrameworkRepository`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+IDisposable <|-- "BaseFrameworkRepository`2"
+"IBaseFrameworkRepository`2" "<TEntity,TPrimeryKey>" <|-- "BaseFrameworkRepository`2"
+@enduml

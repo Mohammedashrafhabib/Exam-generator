@@ -1,0 +1,7 @@
+@startuml
+class ProductController {
+    + ProductController(ProductService:IProductService)
+    + <<async>> getCalorificLookup(searchModel:ProductLookupSearchModel) : Task<GenericResult<IList<ProductLightViewModel>>>
+}
+ControllerBase <|-- ProductController
+@enduml

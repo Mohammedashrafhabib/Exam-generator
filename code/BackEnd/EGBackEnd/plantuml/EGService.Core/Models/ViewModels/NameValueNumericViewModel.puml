@@ -1,0 +1,10 @@
+@startuml
+class NameValueNumericViewModel {
+    + Id : long <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+}
+class NameValueViewModel {
+    + Value : long <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+}
+@enduml

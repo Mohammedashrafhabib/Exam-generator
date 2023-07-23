@@ -1,0 +1,9 @@
+@startuml
+class ExceptionModel {
+    + RequestTime : DateTime? <<get>> <<set>>
+    + StatusCode : int <<get>> <<set>>
+    + Message : string <<get>> <<set>>
+    + StackTrace : string <<get>> <<set>>
+    + ErrorCode : int <<get>> <<set>>
+}
+@enduml

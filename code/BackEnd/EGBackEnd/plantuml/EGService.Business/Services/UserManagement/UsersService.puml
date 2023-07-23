@@ -1,0 +1,18 @@
+@startuml
+class UsersService {
+    + UsersService(mapper:IMapper, logger:ILoggerService, unitOfWorkAsync:IUnitOfWorkAsync, UsersRepositoryAsync:IUsersRepositoryAsync, currentUserService:ICurrentUserService, jwtService:IJwtService, mailNotification:IMailNotification)
+    + <<async>> ValidateModelAsync(model:UserViewModel) : Task
+    + <<async>> ValidateModelAsync(modelCollection:IEnumerable<UserViewModel>) : Task
+    + <<async>> GetAsync(id:long) : Task<UserViewModel>
+    + <<async>> GetDetailsAsync(id:long) : Task<UserDetailViewModel>
+    + <<async>> AddAsync(model:UserViewModel) : Task<UserViewModel>
+    + <<async>> UpdateAsync(model:UserViewModel) : Task<UserViewModel>
+    + <<async>> DeleteAsync(id:long) : Task
+    + Login(model:LoginViewModel) : UserLoggedInViewModel
+    + <<async>> ChangePasswordAsync(model:ChangePasswordViewModel) : Task
+    + <<async>> ResetPasswordAsync(userId:long) : Task
+    + <<async>> GetCurrentUser() : Task<CurrentUserViewModel>
+    + <<async>> ForgotPassword(forgotPasswordModel:ForgotPasswordModel) : Task<bool>
+}
+IUsersService <|-- UsersService
+@enduml

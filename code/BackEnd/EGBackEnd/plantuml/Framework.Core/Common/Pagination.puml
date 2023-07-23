@@ -1,0 +1,8 @@
+@startuml
+class Pagination {
+    + PageIndex : int? <<get>> <<set>> = 0
+    + PageSize : int? <<get>> <<set>> = 10
+    + TotalCount : long? <<get>> <<set>>
+    + GetTotalCount : bool <<get>> <<set>> = true
+}
+@enduml

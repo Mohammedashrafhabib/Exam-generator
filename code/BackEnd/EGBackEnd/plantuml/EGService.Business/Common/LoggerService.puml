@@ -1,0 +1,12 @@
+@startuml
+class LoggerService {
+    + LoggerService(httpContext:IHttpContextAccessor)
+    + Log(content:string, type:LogType, customFileName:string) : void
+    + LogError(content:string) : void
+    + LogError(ex:Exception) : void
+    + LogInfo(content:string, customFileName:string) : void
+    + LogText(content:string, customFileName:string) : void
+    + LogWarning(content:string, customFileName:string) : void
+}
+ILoggerService <|-- LoggerService
+@enduml

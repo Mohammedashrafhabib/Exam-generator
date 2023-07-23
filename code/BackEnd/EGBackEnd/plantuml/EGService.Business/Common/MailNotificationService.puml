@@ -1,0 +1,8 @@
+@startuml
+class MailNotificationService {
+    + MailNotificationService(config:IConfiguration)
+    + <<async>> SendMail(to:string, cc:string, bcc:string, subject:string, body:string) : Task<bool>
+    + <<async>> SendMail(to:List<string>, cc:List<string>, bcc:List<string>, subject:string, body:string) : Task<bool>
+}
+IMailNotification <|-- MailNotificationService
+@enduml

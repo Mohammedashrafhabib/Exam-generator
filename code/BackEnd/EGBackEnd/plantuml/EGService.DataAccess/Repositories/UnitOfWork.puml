@@ -1,0 +1,7 @@
+@startuml
+class UnitOfWork {
+    + UnitOfWork(context:EGServiceContext)
+    + Commit() : int
+}
+IUnitOfWork <|-- UnitOfWork
+@enduml

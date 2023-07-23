@@ -1,0 +1,10 @@
+@startuml
+class AuthFailureResult {
+    + AuthFailureResult(reasonPhrase:string, response:HttpResponse)
+    + ReasonPhrase : string <<get>>
+    + ExecuteAsync(cancellationToken:CancellationToken) : Task<HttpResponse>
+    + ExecuteResultAsync(context:ActionContext) : Task
+}
+IActionResult <|-- AuthFailureResult
+AuthFailureResult --> "Request" HttpResponse
+@enduml

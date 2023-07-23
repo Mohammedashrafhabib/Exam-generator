@@ -1,0 +1,6 @@
+@startuml
+enum Order {
+    Ascending= 0,
+    Descending,
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class RepoExtention <<static>> {
+    + {static} WhereIf(entities:IQueryable<TEntity>, condition:Func<bool>, predicate:Expression<Func<TEntity, bool>>) : IQueryable<TEntity>
+    + {static} WhereIf(entities:IQueryable<TEntity>, condition:bool, predicate:Expression<Func<TEntity, bool>>) : IQueryable<TEntity>
+}
+@enduml

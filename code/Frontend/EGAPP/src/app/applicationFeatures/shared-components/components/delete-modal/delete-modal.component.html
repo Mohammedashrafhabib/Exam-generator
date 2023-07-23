@@ -1,0 +1,25 @@
+<!-- Modal -->
+
+<div class="modal fade" data-bs-backdrop="static" id="deleteModel" tabindex="-1" aria-labelledby="deleteModelLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+  
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-13 text-center">
+            <h5 class="text-black">
+              {{ deleteMessage | translate }}
+            </h5>
+          </div>
+        </div>
+        <div class="modal-footer border-0 mx-auto">
+          <button type="
+            button" class="morelight-btn" data-bs-dismiss="modal">{{"shared.cancel"|translate}}</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteItem()">{{"shared.confirm"|
+            translate }}</button>
+        </div>
+      </div>
+    </div>
+  </div>

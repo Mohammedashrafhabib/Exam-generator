@@ -1,0 +1,6 @@
+@startuml
+interface IUsersRepositoryAsync {
+}
+class "IBaseServiceRepositoryAsync`2"<T1,T2> {
+}
+@enduml

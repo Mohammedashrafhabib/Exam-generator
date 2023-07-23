@@ -1,0 +1,8 @@
+@startuml
+class ErrorDetails {
+    + <<override>> ToString() : string
+    + StatusCode : int <<get>> <<set>>
+    + Message : string <<get>> <<set>>
+    + ErrorCode : int <<get>> <<set>>
+}
+@enduml

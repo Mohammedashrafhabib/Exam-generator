@@ -1,0 +1,11 @@
+@startuml
+enum ErrorCode {
+    NotFound= 1,
+    CodeAlreadyExist= 3,
+    EmailAlreadyExist= 5,
+    UserNameAlreadyExist= 8,
+    PasswordIncorrect= 17,
+    InActiveUser= 55,
+    InvalidOperationException=70,
+}
+@enduml

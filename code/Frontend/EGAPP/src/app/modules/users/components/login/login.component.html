@@ -1,0 +1,114 @@
+<section EGRtl class="login" *ngIf="login">
+  <div class="container-center-horizontal">
+    <form class="signin-uiux screen" [formGroup]="loginForm" (keyup.enter)="submit()">
+      <div class="overlap-group3">
+        <a href="home-uiux.html"><img class="logo" src="./assets/media/img/logo-in-footer@2x.png" alt="logo" /> </a>
+        <h1 class="title inter-semi-bold-blue-zodiac-36-7px">Log in to ExamGenerator</h1>
+        <div class="flex-row">
+          <a href="https://myaccount.google.com/" target="_blank"
+            ><img class="link" src="./assets/media/img/google-2@2x.png" alt="google" /> </a
+          ><a href="https://www.facebook.com/" target="_blank"
+            ><img class="link" src="./assets/media/img/facebook-2@2x.png" alt="icon-facebook" />
+          </a>
+        </div>
+        <div class="or">
+          <img class="line" src="./assets/media/img/line-7-2@2x.png" alt="Line 7" />
+          <div class="or-1 inter-normal-blue-zodiac-22-6px">or</div>
+          <img class="line-8 line" src="./assets/media/img/line-7-2@2x.png" alt="Line 8" />
+        </div>
+        <div class="overlap-group1"><input class="e-mail" id="loginEmail" formControlName="username" placeholder="E-mail" type="email" /></div>
+        <div class="overlap-group2">
+          <input
+          formControlName="password" id="loginPassword"
+            class="password inter-normal-black-22-6px-2"
+            name="password"
+            placeholder="Password"
+            type="password"
+          />
+        </div>
+        <div class="flex-row-1">
+         
+        <div >
+          <div class="log-in">
+            <div class="overlap-group"><div  (click)="submit()"class="log-in-1 inter-extra-bold-white-22-6px">Log In</div></div>
+          </div></div
+        ><div 
+          ><p class="dont-have-an-account-sign-up">
+            <span class="span0-1">Don&#39;t have an account? </span><span  (click)="login=!login"><span class="span1-1">Sign up</span></span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    </form>
+  </div>
+</section>
+<section EGRtl class="login" *ngIf="!login">
+  <section EGRtl class="login">
+
+    <div class="container-center-horizontal">
+      <form class="register-uiux screen" name="form3" [formGroup]="editForm_signup" >
+        <div class="overlap-group6 overlap">
+          <a href="home-uiux.html"><img class="logo" src="./assets/media/img/logo-in-footer@2x.png" alt="logo" /> </a>
+          <h1 class="create-your-free-account inter-semi-bold-blue-zodiac-36-7px">Create Your Free Account</h1>
+          <div class="flex-row">
+            <a href="https://myaccount.google.com/?hl=ar&utm_source=OGB&utm_medium=act" target="_blank"
+              ><img class="link" src="./assets/media/img/google-3@2x.png" alt="google" /> </a
+            ><a href="https://www.facebook.com/" target="_blank"
+              ><img class="link" src="./assets/media/img/facebook-3@2x.png" alt="icon-facebook" />
+            </a>
+          </div>
+          <div class="or">
+            <img class="line" src="./assets/media/img/line-7-2@2x.png" alt="Line 7" />
+            <div class="or-1 inter-normal-blue-zodiac-22-6px">or</div>
+            <img class="line-8 line" src="./assets/media/img/line-7-2@2x.png" alt="Line 8" />
+          </div>
+          <div class="overlap-group-container">
+            <div class="overlap-group overlap">
+              <input
+                class="st-name inter-normal-black-22-6px"
+                name="firstname"
+                formControlName="firstName"
+                placeholder="First Name"
+                type="text"
+                required
+              />
+            </div>
+            <div class="overlap-group overlap">
+              <input class="st-name inter-normal-black-22-6px" formControlName="lastName" name="lastname" placeholder="Last Name" type="text" />
+            </div>
+          </div>
+          <div class="overlap-group3 overlap">
+            <input class="e-mail inter-normal-black-22-6px"formControlName="email" name="e-mail" placeholder="E-mail" type="email" required />
+          </div>
+          <!-- <div class="overlap-group2 overlap">
+            <input
+              class="password inter-normal-black-22-6px"
+              name="password"
+              placeholder="Password"
+              type="password"
+              required
+            />
+          </div>
+          <div class="overlap-group1 overlap">
+            <input
+              class="confirm-password inter-normal-black-22-6px"
+              name="confirmpassword"
+              placeholder="Confirm Password"
+              type="password"
+              required
+            />
+          </div> -->
+          <div >
+            <div class="continue-button" (click)="submit_signup()">
+              <div class="overlap-group-1"><div class="continue inter-extra-bold-white-22-6px">Continue</div></div>
+            </div></div
+          ><div  (click)="login=!login"
+            ><p class="already-have-an-account-login">
+              <span class="span0">Already have an account? </span><span class="span1">Login</span>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+    </section></section>

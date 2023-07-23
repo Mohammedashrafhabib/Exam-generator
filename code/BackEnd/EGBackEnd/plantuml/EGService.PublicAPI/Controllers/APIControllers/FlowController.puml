@@ -1,0 +1,11 @@
+@startuml
+class FlowController {
+    + FlowController(FlowService:IFlowService)
+    + <<async>> GetAsync(id:int) : Task<FlowViewModel>
+    + <<async>> Search(searchModel:FlowSearchModel) : Task<GenericResult<IList<FlowLightViewModel>>>
+    + <<async>> GetDetails(id:int) : Task<FlowViewViewModel>
+    + <<async>> DownloadFlowFile(id:int) : Task<IActionResult>
+    + <<async>> DownloadPdfFlowFile(id:int) : Task<IActionResult>
+}
+ControllerBase <|-- FlowController
+@enduml

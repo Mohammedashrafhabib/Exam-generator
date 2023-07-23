@@ -1,0 +1,432 @@
+/* screen - contact-uiux */
+
+.contact-uiux {
+    background-color: #f2f6ff;
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    min-height: 1024px;
+    min-width: 1440px;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .contact-uiux .header {
+    background-color: transparent;
+    display: flex;
+    height: 224px;
+    margin-left: -21px;
+    margin-top: -23px;
+    width: 1425px;
+  }
+  
+  .contact-uiux .logo {
+    cursor: pointer;
+    height: 201px;
+    margin-left: 21px;
+    margin-top: 23px;
+    object-fit: cover;
+    width: 812px;
+  }
+  
+  .contact-uiux .overlap-group1 {
+    border-radius: 14px;
+    height: 45px;
+    position: relative;
+    width: 71px;
+  }
+  
+  .contact-uiux .register:hover {
+    background-color: #4a79ae
+  }
+  
+  .contact-uiux .place {
+    left: 6px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 13px;
+    width: 59px;
+  }
+  
+  .contact-uiux .sign-in:hover {
+    background-color: #d8eaff
+  }
+  
+  .contact-uiux .group-1 {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-left: 273px;
+    margin-top: 17px;
+    min-height: 611px;
+    width: 899px;
+  }
+  
+  .contact-uiux .get-in-touch-with-th {
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 44px;
+  }
+  
+  .contact-uiux .any-questions-or-fee {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 37px;
+    min-height: 17px;
+  }
+  
+  .contact-uiux .dropdown-menu {
+    display: flex;
+    gap: 35px;
+    margin-top: 55px;
+    width: 896px;
+  }
+  
+  .contact-uiux .what-can-we-help-with {
+    height: 17px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 7px;
+    width: 172px;
+  }
+  
+  .contact-uiux .dropdown {
+    border-radius: 5px;
+    display: flex;
+    height: 47px;
+    width: 687px;
+  }
+  
+  .contact-uiux .button {
+    align-items: flex-start;
+    background-color: var(--white);
+    border: 2px solid;
+    border-color: var(--blue-zodiac);
+    border-radius: 8px;
+    display: flex;
+    gap: 249px;
+    height: 50px;
+    padding: 15px 9px 15px 296px;
+    position: relative;
+    width: 688px;
+  }
+  
+  .contact-uiux .label {
+    color: var(--blue-zodiac);
+    font-family: var(--font-family-fira_sans);
+    font-size: var(--font-size-m);
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-top: -2.00px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .contact-uiux .name-input-container {
+    align-items: flex-start;
+    display: flex;
+    gap: 65px;
+    margin-top: 27px;
+    min-width: 898px;
+  }
+  
+  .contact-uiux .name-input {
+    align-items: center;
+    display: flex;
+    gap: 156px;
+    min-width: 474px;
+  }
+  
+  .contact-uiux .name {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 13.0px;
+    min-height: 17px;
+    min-width: 51px;
+  }
+  
+  .contact-uiux .overlap-group {
+    align-items: flex-start;
+    background-color: var(--white);
+    border: 3px solid;
+    border-color: var(--blue-zodiac);
+    border-radius: 5px;
+    display: flex;
+    height: 50px;
+    min-width: 263px;
+    padding: 5px 6px;
+  }
+  
+  .contact-uiux .x {
+    background-color: transparent;
+    border: 0;
+    height: 34px;
+    letter-spacing: 0;
+    line-height: normal;
+    padding: 0;
+    width: 245px;
+  }
+  
+  .contact-uiux .x::placeholder {
+    color: #0000007a;
+  }
+  
+  .contact-uiux .username-input {
+    align-items: center;
+    display: flex;
+    gap: 19px;
+    min-width: 359px;
+  }
+  
+  .contact-uiux .user-name {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 7.0px;
+    min-height: 17px;
+    min-width: 73px;
+  }
+  
+  .contact-uiux .x-1 {
+    background-color: transparent;
+    border: 0;
+    height: 34px;
+    letter-spacing: 0;
+    line-height: normal;
+    padding: 0;
+    width: 245px;
+  }
+  
+  .contact-uiux .x-1::placeholder {
+    color: #0000007a;
+  }
+  
+  .contact-uiux .email-input {
+    align-items: center;
+    display: flex;
+    gap: 159px;
+    margin-top: 31px;
+    min-width: 899px;
+  }
+  
+  .contact-uiux .email {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 1.0px;
+    min-height: 17px;
+    min-width: 48px;
+  }
+  
+  .contact-uiux .overlap-group2 {
+    align-items: flex-start;
+    background-color: var(--white);
+    border: 3px solid;
+    border-color: var(--blue-zodiac);
+    border-radius: 5px;
+    display: flex;
+    height: 50px;
+    min-width: 688px;
+    padding: 6px 10px;
+  }
+  
+  .contact-uiux .x-2 {
+    background-color: transparent;
+    border: 0;
+    height: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+    padding: 0;
+    width: 663px;
+  }
+  
+  .contact-uiux .x-2::placeholder {
+    color: #0000007a;
+  }
+  
+  .contact-uiux .message-input {
+    align-items: center;
+    display: flex;
+    gap: 134px;
+    margin-top: 28px;
+    min-width: 899px;
+  }
+  
+  .contact-uiux .message {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 28.0px;
+    min-height: 17px;
+    min-width: 73px;
+  }
+  
+  .contact-uiux .overlap-group1-1 {
+    align-items: flex-start;
+    background-color: var(--white);
+    border: 3px solid;
+    border-color: var(--blue-zodiac);
+    border-radius: 5px;
+    display: flex;
+    height: 119px;
+    min-width: 688px;
+    padding: 7px;
+  }
+  
+  .contact-uiux .x-3 {
+    background-color: transparent;
+    border: 0;
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-weight: 600;
+    height: 100px;
+    letter-spacing: 0;
+    line-height: normal;
+    opacity: 0.8;
+    padding: 0;
+    width: 668px;
+  }
+  
+  .contact-uiux .x-3::placeholder {
+    color: #00000099;
+  }
+  
+  .contact-uiux .submit-button {
+    align-items: flex-start;
+    align-self: center;
+    cursor: pointer;
+    display: flex;
+    margin-right: 3.0px;
+    margin-top: 54px;
+    min-width: 96px;
+  }
+  
+  .contact-uiux .overlap-group-1 {
+    align-items: flex-end;
+    background-color: var(--san-marino);
+    border-radius: 14px;
+    display: flex;
+    height: 52px;
+    min-width: 94px;
+    padding: 12px 7px;
+  }
+  
+  .contact-uiux .submit {
+    color: var(--alto);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 27px;
+    min-width: 80px;
+  }
+  
+  .contact-uiux .footer {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    height: auto;
+    justify-content: flex-start;
+    margin-left: 144px;
+    margin-top: 54px;
+    min-height: 115px;
+    width: 1152px;
+  }
+  
+  .contact-uiux .footer-line {
+    height: 1px;
+    margin-top: -1px;
+    object-fit: cover;
+    width: 1152px;
+  }
+  
+  .contact-uiux .logo-in-footer {
+    cursor: pointer;
+    height: 96px;
+    object-fit: cover;
+    width: 190px;
+  }
+  
+  .contact-uiux .settings {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 90px;
+  }
+  
+  .contact-uiux .terms-conditions {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 200px;
+  }
+  
+  .contact-uiux .contact-us {
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 119px;
+  }
+  /* Dropdown Button */ 
+  .contact-uiux .button {
+    /* background-color: #04AA6D; */
+    /* color: white; */
+    padding: 15px;
+    padding-left: 290px;
+    /* font-size: 16px; */
+    border-width: 3px;
+  
+    
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .contact-uiux .dropdown {
+    position: relative;
+    display: inline-block;}
+  
+  
+  /* Dropdown Content (Hidden by Default) */
+  .contact-uiux .dropdown-content {
+    border-radius: 7px;
+    top:50px;
+    margin-left: -290px;
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 688px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    color: var(--san-marino);
+    font-family: var(--font-family-fira_sans);
+    font-size: var(--font-size-m);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 14px;
+  }
+  
+  /* Links inside the dropdown */
+  .contact-uiux .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .contact-uiux .dropdown-content a:hover {
+    background-color: #DBE2EF;
+    color: #4a79ae;
+  
+  }
+  
+  /* Show the dropdown menu on hover */
+  .contact-uiux .dropdown:hover .dropdown-content {display: block;}
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .contact-uiux .dropdown:hover .button {background-color: #ffffff;}

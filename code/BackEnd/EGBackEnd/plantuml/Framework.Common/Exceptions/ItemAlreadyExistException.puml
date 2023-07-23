@@ -1,0 +1,7 @@
+@startuml
+class ItemAlreadyExistException {
+    + ItemAlreadyExistException(message:string)
+    + ItemAlreadyExistException()
+    + ItemAlreadyExistException(errorCode:int)
+}
+@enduml

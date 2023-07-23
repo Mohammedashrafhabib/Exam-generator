@@ -1,0 +1,9 @@
+@startuml
+class contextModel {
+    + context : string <<get>> <<set>>
+    + MCQ : bool <<get>> <<set>>
+    + COMPLETE : bool <<get>> <<set>>
+    + WH : bool <<get>> <<set>>
+    + T_F : bool <<get>> <<set>>
+}
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class NationalEnergyBalanceController {
+    + NationalEnergyBalanceController(NationalEnergyBalanceService:INationalEnergyBalanceService)
+    + <<async>> Search(searchModel:NationalEnergyBalanceSearchModel) : Task<GenericResult<IList<NationalEnergyBalanceLightViewModel>>>
+    + <<async>> GetPublishedYears() : Task<IList<int>>
+    + <<async>> GetDetails(id:int) : Task<NationalEnergyBalanceViewViewModel>
+    + <<async>> SearchLookup(searchModel:NationalEnergyBalanceLookupSearchModel) : Task<GenericResult<IList<NationalEnergyBalanceLookupViewModel>>>
+}
+ControllerBase <|-- NationalEnergyBalanceController
+@enduml

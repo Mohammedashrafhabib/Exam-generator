@@ -1,0 +1,5 @@
+@startuml
+class HashPass <<static>> {
+    + {static} HashPassword(password:string) : string
+}
+@enduml

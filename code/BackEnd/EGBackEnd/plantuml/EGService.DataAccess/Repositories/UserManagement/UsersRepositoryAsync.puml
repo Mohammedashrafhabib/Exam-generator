@@ -1,0 +1,9 @@
+@startuml
+class UsersRepositoryAsync {
+    + UsersRepositoryAsync(context:EGServiceContext, currentUserService:ICurrentUserService)
+    + Login(userName:string) : User
+}
+class "BaseServiceRepositoryAsync`2"<T1,T2> {
+}
+IUsersRepositoryAsync <|-- UsersRepositoryAsync
+@enduml

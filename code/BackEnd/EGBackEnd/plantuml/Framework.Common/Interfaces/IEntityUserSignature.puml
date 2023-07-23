@@ -1,0 +1,5 @@
+@startuml
+interface IEntityUserSignature {
+}
+IEntityCreatedUserSignature <|-- IEntityUserSignature
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+class "GenericCollectionViewModel`1"<TViewModel> {
+    + GenericCollectionViewModel()
+    + GenericCollectionViewModel(collection:IList<TViewModel>, totalCount:long, pageIndex:int?, pageSize:int?)
+    + TotalCount : long <<get>> <<set>>
+    + PageIndex : int? <<get>> <<set>>
+    + PageSize : int? <<get>> <<set>>
+}
+class "IList`1"<T> {
+}
+"GenericCollectionViewModel`1" --> "Collection<TViewModel>" "IList`1"
+@enduml

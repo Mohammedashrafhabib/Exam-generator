@@ -1,0 +1,5 @@
+@startuml
+class EGServiceContextModelSnapshot <<partial>> {
+}
+ModelSnapshot <|-- EGServiceContextModelSnapshot
+@enduml

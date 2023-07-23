@@ -1,0 +1,7 @@
+@startuml
+class DataEntryController {
+    + DataEntryController(DataEntryService:IDataEntryService)
+    + <<async>> getByDataSetId(dataSetId:int) : Task<List<DataEntryViewModel>>
+}
+ControllerBase <|-- DataEntryController
+@enduml

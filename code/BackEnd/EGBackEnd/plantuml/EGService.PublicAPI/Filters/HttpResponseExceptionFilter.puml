@@ -1,0 +1,10 @@
+@startuml
+class HttpResponseExceptionFilter {
+    + HttpResponseExceptionFilter()
+    + Order : int <<get>>
+    + OnActionExecuting(context:ActionExecutingContext) : void
+    + OnActionExecuted(context:ActionExecutedContext) : void
+}
+IActionFilter <|-- HttpResponseExceptionFilter
+IOrderedFilter <|-- HttpResponseExceptionFilter
+@enduml

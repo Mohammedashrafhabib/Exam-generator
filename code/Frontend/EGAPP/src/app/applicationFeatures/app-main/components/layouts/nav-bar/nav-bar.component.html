@@ -1,0 +1,35 @@
+<header class="header">
+  <a routerLink="/"><img class="logo" src="./assets/media/img/logo.png" alt="logo" /></a>
+  <div *ngIf="currentUser != null">
+  
+      <div class="register-button">
+        <div class="overlap-group1">
+          <div ></div>
+          <div class="sign-in-1 inter-extra-bold-blue-zodiac-14px">hello,{{currentUser?.firstName}}</div>
+        </div>
+      </div>
+  
+      
+    
+
+  </div>
+  <div *ngIf="currentUser == null">
+    <a routerLink="signup">
+      <div class="register-button">
+        <div class="overlap-group1">
+          <div class="register"></div>
+          <div class="place inter-extra-bold-alto-14px">Register</div>
+        </div>
+      </div></a
+    ><a routerLink="login">
+      <div class="sign-in-button">
+        <div class="sign-container">
+          <div class="sign-in"></div>
+          <div class="sign-in-1 inter-extra-bold-blue-zodiac-14px">Sign In</div>
+        </div>
+      </div></a
+    >
+    
+  </div>
+  
+</header>

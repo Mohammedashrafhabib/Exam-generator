@@ -1,0 +1,9 @@
+@startuml
+class BannerController {
+    + BannerController(BannerService:IBannerService)
+    + <<async>> GetAsync(id:int) : Task<BannerViewModel>
+    + <<async>> SearchLookup(searchModel:BannerLookupSearchModel) : Task<GenericResult<IList<BannerViewViewModel>>>
+    + <<async>> GetDetails(id:int) : Task<BannerViewViewModel>
+}
+ControllerBase <|-- BannerController
+@enduml

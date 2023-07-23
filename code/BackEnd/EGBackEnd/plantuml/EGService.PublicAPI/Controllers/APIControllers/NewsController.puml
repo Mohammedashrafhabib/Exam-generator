@@ -1,0 +1,9 @@
+@startuml
+class NewsController {
+    + NewsController(NewsService:INewsService)
+    + <<async>> GetAsync(id:int) : Task<NewsViewModel>
+    + <<async>> Search(searchModel:NewsSearchModel) : Task<GenericResult<IList<NewsLightViewModel>>>
+    + <<async>> GetDetails(id:int) : Task<NewsViewViewModel>
+}
+Controller <|-- NewsController
+@enduml

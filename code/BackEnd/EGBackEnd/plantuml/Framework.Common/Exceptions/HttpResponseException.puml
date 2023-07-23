@@ -1,0 +1,7 @@
+@startuml
+class HttpResponseException {
+    + Status : int <<get>> <<set>> = 500
+    + Value : object <<get>> <<set>>
+}
+Exception <|-- HttpResponseException
+@enduml

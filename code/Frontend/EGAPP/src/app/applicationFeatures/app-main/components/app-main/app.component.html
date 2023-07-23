@@ -1,0 +1,23 @@
+
+  <div *ngIf="currentUser != null" >
+ 
+    <!-- <div class="wrapper" > -->
+      <!-- Sidebar  -->
+
+      <app-nav-bar></app-nav-bar>
+
+      <div EGRtl id="main-wrapper" 
+       class="main-wrapper">
+        <div class=""></div>
+        <div class="container-center-horizontal">
+          <div class="home-uiux screen">
+                      <app-main-content></app-main-content>
+                      <app-footer></app-footer>
+          </div>
+        </div>
+      </div>
+   </div>
+  <div *ngIf="currentUser == null">
+    <!-- <router-outlet></router-outlet> -->
+     <app-login></app-login> 
+  </div>

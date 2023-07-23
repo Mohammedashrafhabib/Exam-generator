@@ -1,0 +1,8 @@
+@startuml
+class ItemNotFoundException {
+    + ItemNotFoundException(message:string)
+    + ItemNotFoundException()
+    + ItemNotFoundException(errorCode:int)
+    + ItemNotFoundException(errorCode:int, message:string)
+}
+@enduml

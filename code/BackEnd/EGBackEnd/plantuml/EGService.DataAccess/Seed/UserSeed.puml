@@ -1,0 +1,7 @@
+@startuml
+class UserSeed {
+}
+class "List`1"<T> {
+}
+UserSeed --> "SeedList<User>" "List`1"
+@enduml

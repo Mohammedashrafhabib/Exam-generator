@@ -1,0 +1,121 @@
+
+   .header {
+    background-color: transparent;
+    display: flex;
+    height: 224px;
+    margin-left: -21px;
+    margin-top: -23px;
+    width: 1425px;
+  }
+  
+   .logo {
+    cursor: pointer;
+    height: 201px;
+    margin-left: 21px;
+    margin-top: 23px;
+    object-fit: cover;
+    width: 812px;
+  }
+  
+   .overlap-group1 {
+    border-radius: 14px;
+    height: 45px;
+    position: relative;
+    width: 71px;
+  }
+  
+   .register:hover {
+    background-color: #4a79ae
+  }
+  
+   .place {
+    left: 6px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 13px;
+    width: 59px;
+  }
+  
+   .sign-in:hover {
+    background-color: #d8eaff
+  }
+  
+   .terms-and-conditions {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 900;
+    height: 44px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 194px;
+    margin-top: 39px;
+    width: 404px;
+  }
+  
+   .title {
+    color: var(--black);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xxl);
+    font-weight: 900;
+    height: 121px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-left: 540px;
+    margin-top: 168px;
+    opacity: 0.2;
+    width: 360px;
+  }
+  
+   .footer {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+    height: auto;
+    justify-content: flex-start;
+    margin-left: 144px;
+    margin-top: 310px;
+    min-height: 115px;
+    width: 1152px;
+  }
+  
+   .footer-line {
+    height: 1px;
+    margin-top: -1px;
+    object-fit: cover;
+    width: 1152px;
+  }
+  
+   .logo-in-footer {
+    cursor: pointer;
+    height: 96px;
+    object-fit: cover;
+    width: 190px;
+  }
+  
+   .settings {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 90px;
+  }
+  
+   .terms-conditions {
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 200px;
+  }
+  
+   .contact-us {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 119px;
+  }
+  

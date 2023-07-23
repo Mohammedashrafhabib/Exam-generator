@@ -1,0 +1,8 @@
+@startuml
+class Startup {
+    + Startup(configuration:IConfiguration)
+    + ConfigureServices(services:IServiceCollection) : void
+    + Configure(app:IApplicationBuilder, env:IWebHostEnvironment, logger:ILoggerService, backgroundJobClient:IBackgroundJobClient, recurringJobManager:IRecurringJobManager, serviceProvider:IServiceProvider) : void
+}
+Startup --> "Configuration" IConfiguration
+@enduml

@@ -1,0 +1,5 @@
+@startuml
+interface "IEntityIdentity`1"<TPrimeryKey> {
+    + Id : TPrimeryKey <<get>> <<set>>
+}
+@enduml

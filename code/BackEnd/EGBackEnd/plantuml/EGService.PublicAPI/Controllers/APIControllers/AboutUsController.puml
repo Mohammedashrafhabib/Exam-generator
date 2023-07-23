@@ -1,0 +1,9 @@
+@startuml
+class AboutUsController {
+    + AboutUsController(AboutUsService:IAboutUsService)
+    + <<async>> GetAsync(id:int) : Task<AboutUsViewModel>
+    + <<async>> Search(searchModel:AboutUsSearchModel) : Task<GenericResult<IList<AboutUsLightViewModel>>>
+    + <<async>> GetDetails(id:int) : Task<AboutUsViewViewModel>
+}
+ControllerBase <|-- AboutUsController
+@enduml

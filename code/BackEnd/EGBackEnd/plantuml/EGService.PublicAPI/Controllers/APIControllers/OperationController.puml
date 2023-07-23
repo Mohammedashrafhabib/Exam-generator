@@ -1,0 +1,10 @@
+@startuml
+class OperationController {
+    + OperationController(OperationService:IOperationService)
+    + <<async>> GetAsync(id:int) : Task<OperationViewModel>
+    + <<async>> Search(searchModel:OperationSearchModel) : Task<GenericResult<IList<OperationLightViewModel>>>
+    + <<async>> SearchLookup(searchModel:OperationLookupSearchModel) : Task<GenericResult<IList<OperationLookupViewModel>>>
+    + <<async>> GetDetails(id:int) : Task<OperationViewViewModel>
+}
+ControllerBase <|-- OperationController
+@enduml

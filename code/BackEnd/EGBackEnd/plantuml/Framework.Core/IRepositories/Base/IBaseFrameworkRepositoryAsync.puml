@@ -1,0 +1,7 @@
+@startuml
+interface "IBaseFrameworkRepositoryAsync`2"<TEntity,TPrimeryKey> {
+}
+class "IEntityIdentity`1"<T> {
+}
+IAsyncDisposable <|-- "IBaseFrameworkRepositoryAsync`2"
+@enduml

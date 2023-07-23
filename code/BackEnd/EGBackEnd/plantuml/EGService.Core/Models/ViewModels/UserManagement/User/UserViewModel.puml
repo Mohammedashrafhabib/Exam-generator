@@ -1,0 +1,20 @@
+@startuml
+class UserViewModel {
+    + UserViewModel()
+    + Id : long <<get>> <<set>>
+    + FirstModificationDate : DateTime? <<get>> <<set>>
+    + LastModificationDate : DateTime? <<get>> <<set>>
+    + CreatedByUserId : long? <<get>> <<set>>
+    + FirstModifiedByUserId : long? <<get>> <<set>>
+    + LastModifiedByUserId : long? <<get>> <<set>>
+    + IsDeleted : bool <<get>> <<set>>
+    + DeletionDate : DateTime? <<get>> <<set>>
+    + DeletedByUserId : long? <<get>> <<set>>
+    + MustDeletedPhysical : bool? <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+}
+class "Nullable`1"<T> {
+}
+UserViewModel --> "CreationDate" DateTime
+UserViewModel --> "IsActive<System.Boolean>" "Nullable`1"
+@enduml

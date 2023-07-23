@@ -1,0 +1,8 @@
+@startuml
+class DataValidationException {
+    + DataValidationException(message:string)
+    + DataValidationException()
+    + DataValidationException(errorCode:int)
+    + DataValidationException(errorCode:int, message:string)
+}
+@enduml

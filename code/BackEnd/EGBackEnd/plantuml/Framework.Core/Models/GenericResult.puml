@@ -1,0 +1,6 @@
+@startuml
+class "GenericResult`1"<TCollection> {
+    + Collection : TCollection <<get>> <<set>>
+}
+"GenericResult`1" --> "Pagination" Pagination
+@enduml

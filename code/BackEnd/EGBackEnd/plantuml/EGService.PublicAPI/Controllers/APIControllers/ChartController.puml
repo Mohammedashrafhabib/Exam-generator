@@ -1,0 +1,8 @@
+@startuml
+class ChartController {
+    + ChartController(chartService:IChartService)
+    + <<async>> viewAll(searchModel:ChartSearchModel) : Task<GenericResult<IList<ChartViewModel>>>
+    + <<async>> GetDetails(id:int) : Task<ChartViewModel>
+}
+ControllerBase <|-- ChartController
+@enduml

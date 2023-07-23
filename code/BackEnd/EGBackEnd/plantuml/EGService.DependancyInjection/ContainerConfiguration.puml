@@ -1,0 +1,5 @@
+@startuml
+class ContainerConfiguration {
+    + {static} Configure(services:IServiceCollection, configuration:IConfiguration) : void
+}
+@enduml

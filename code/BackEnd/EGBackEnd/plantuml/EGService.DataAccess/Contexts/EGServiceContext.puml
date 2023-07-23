@@ -1,0 +1,9 @@
+@startuml
+class EGServiceContext {
+    + EGServiceContext(options:DbContextOptions)
+}
+class "DbSet`1"<T> {
+}
+DbContext <|-- EGServiceContext
+EGServiceContext --> "Users<User>" "DbSet`1"
+@enduml

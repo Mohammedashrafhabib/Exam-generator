@@ -1,0 +1,5 @@
+@startuml
+class ApplicationConstants {
+    + {static} AuthFailureCode : int <<get>>
+}
+@enduml

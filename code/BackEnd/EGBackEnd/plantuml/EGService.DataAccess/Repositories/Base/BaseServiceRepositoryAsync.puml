@@ -1,0 +1,13 @@
+@startuml
+class "BaseServiceRepositoryAsync`2"<TEntity,TPrimeryKey> {
+    + BaseServiceRepositoryAsync(context:EGServiceContext, currentUserService:ICurrentUserService)
+}
+class "BaseFrameworkRepositoryAsync`2"<T1,T2> {
+}
+class "IBaseServiceRepositoryAsync`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+"BaseFrameworkRepositoryAsync`2" "<TEntity,TPrimeryKey>" <|-- "BaseServiceRepositoryAsync`2"
+"IBaseServiceRepositoryAsync`2" "<TEntity,TPrimeryKey>" <|-- "BaseServiceRepositoryAsync`2"
+@enduml

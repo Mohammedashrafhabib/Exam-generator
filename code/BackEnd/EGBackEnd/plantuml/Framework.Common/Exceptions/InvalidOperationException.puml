@@ -1,0 +1,7 @@
+@startuml
+class InvalidOperationException {
+    + InvalidOperationException(message:string)
+    + InvalidOperationException()
+    + InvalidOperationException(errorCode:int)
+}
+@enduml

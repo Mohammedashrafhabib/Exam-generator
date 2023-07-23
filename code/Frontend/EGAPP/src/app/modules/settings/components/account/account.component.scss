@@ -1,0 +1,382 @@
+/* screen - settings-account-uiux */
+
+.settings-account-uiux {
+    align-items: center;
+    background-color: var(--white);
+    border: 1px none;
+    display: flex;
+    flex-direction: column;
+    height: 1024px;
+    overflow: hidden;
+    width: 1440px;
+  }
+  
+  .settings-account-uiux .header {
+    align-self: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-shrink: 1;
+    height: 224px;
+    margin-left: -21px;
+    margin-top: -23px;
+    width: 1425px;
+  }
+  
+  .settings-account-uiux .logo {
+    cursor: pointer;
+    height: 201px;
+    margin-left: 21px;
+    margin-top: 23px;
+    object-fit: cover;
+    width: 812px;
+  }
+  
+  .settings-account-uiux .overlap-group1 {
+    border-radius: 14px;
+    height: 45px;
+    position: relative;
+    width: 71px;
+  }
+  
+  .settings-account-uiux .register:hover {
+    background-color: #4a79ae
+  }
+  
+  .settings-account-uiux .place {
+    left: 6px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 13px;
+    width: 59px;
+  }
+  
+  .settings-account-uiux .sign-in:hover {
+    background-color: #d8eaff
+  }
+  
+  .settings-account-uiux .flex-row {
+    align-items: center;
+    display: flex;
+    gap: 133px;
+    height: 216px;
+    margin-left: 5.0px;
+    margin-top: 163px;
+    min-width: 1117px;
+  }
+  
+  .settings-account-uiux .side-links {
+    display: flex;
+    flex-direction: column;
+    height: 190px;
+    margin-bottom: 6.0px;
+    width: 112px;
+  }
+  
+  .settings-account-uiux .account {
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 90px;
+  }
+  
+  .settings-account-uiux .password {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 54px;
+    width: 105px;
+  }
+  
+  .settings-account-uiux .language {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 55px;
+    width: 106px;
+  }
+  
+  .settings-account-uiux .flex-col {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    min-height: 216px;
+    width: 872px;
+  }
+  
+  .settings-account-uiux .stname-input-container {
+    align-items: flex-start;
+    display: flex;
+    gap: 34px;
+    min-width: 872px;
+  }
+  
+  .settings-account-uiux .firstname-input {
+    align-items: center;
+    display: flex;
+    gap: 63px;
+    min-width: 447px;
+  }
+  
+  .settings-account-uiux .first-name {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 3.0px;
+    min-height: 27px;
+    min-width: 117px;
+  }
+  
+  .settings-account-uiux .overlap-group {
+    align-items: flex-end;
+    background-color: var(--link-water);
+    border-radius: 17px;
+    display: flex;
+    height: 50px;
+    min-width: 263px;
+    padding: 9px 17px;
+  }
+  
+  .settings-account-uiux .alan {
+    background-color: transparent;
+    border: 0;
+    height: 31px;
+    letter-spacing: 0;
+    line-height: normal;
+    padding: 0;
+    width: 229px;
+  }
+  
+  .settings-account-uiux .alan::placeholder {
+    color: #00000099;
+  }
+  
+  .settings-account-uiux .lastname-input {
+    align-items: center;
+    display: flex;
+    gap: 12px;
+    min-width: 391px;
+  }
+  
+  .settings-account-uiux .last-name {
+    color: var(--blue-zodiac);
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-s);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 3.0px;
+    min-height: 27px;
+    min-width: 112px;
+  }
+  
+  .settings-account-uiux .john {
+    background-color: transparent;
+    border: 0;
+    height: 31px;
+    letter-spacing: 0;
+    line-height: normal;
+    padding: 0;
+    width: 229px;
+  }
+  
+  .settings-account-uiux .john::placeholder {
+    color: #00000099;
+  }
+  
+  .settings-account-uiux .username-input {
+    align-items: center;
+    display: flex;
+    gap: 60px;
+    margin-top: 30px;
+    min-width: 872px;
+  }
+  
+  .settings-account-uiux .user-name {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 3.0px;
+    min-height: 27px;
+    min-width: 120px;
+  }
+  
+  .settings-account-uiux .overlap-group-1 {
+    background-color: var(--link-water);
+    border-radius: 17px;
+    height: 50px;
+    justify-content: flex-end;
+    min-width: 688px;
+    padding: 0 13px;
+  }
+  
+  .settings-account-uiux .alan-john1 {
+    background-color: transparent;
+    border: 0;
+    height: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    padding: 0;
+    width: 661px;
+  }
+  
+  .settings-account-uiux .alan-john1::placeholder {
+    color: #00000099;
+  }
+  
+  .settings-account-uiux .email-input {
+    align-items: center;
+    display: flex;
+    gap: 109px;
+    margin-left: 3px;
+    margin-top: 36px;
+    min-width: 869px;
+  }
+  
+  .settings-account-uiux .e-mail {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 11.0px;
+    min-height: 27px;
+    min-width: 68px;
+  }
+  
+  .settings-account-uiux .alanj22gmailcom {
+    background-color: transparent;
+    border: 0;
+    height: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    padding: 0;
+    width: 661px;
+  }
+  
+  .settings-account-uiux .alanj22gmailcom::placeholder {
+    color: #00000099;
+  }
+  
+  .settings-account-uiux .flex-col-1 {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    margin-top: 38px;
+    min-height: 380px;
+    width: 1152px;
+  }
+  
+  .settings-account-uiux .phone-num-input {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    margin-right: 15px;
+    min-width: 872px;
+  }
+  
+  .settings-account-uiux .phone-number {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-bottom: 3.0px;
+    min-height: 27px;
+    min-width: 160px;
+  }
+  
+  .settings-account-uiux .x01000000000 {
+    background-color: transparent;
+    border: 0;
+    height: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    padding: 0;
+    width: 661px;
+  }
+  
+  .settings-account-uiux .x01000000000::placeholder {
+    color: #00000099;
+  }
+  
+  .settings-account-uiux .modify-btn {
+    align-items: flex-start;
+    cursor: pointer;
+    display: flex;
+    margin-right: 17px;
+    margin-top: 69px;
+    min-width: 124px;
+  }
+  
+  .settings-account-uiux .overlap-group-2 {
+    background-color: var(--san-marino);
+    border-radius: 14px;
+    height: 41px;
+    min-width: 122px;
+    padding: 0 24px;
+  }
+  
+  .settings-account-uiux .modify {
+    cursor: pointer;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 27px;
+    min-width: 74px;
+    transition: all 0.2s ease;
+  }
+  
+  .settings-account-uiux .modify:hover {
+    transform: scale(1.1);
+  }
+  
+  .settings-account-uiux .footer {
+    align-items: flex-start;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    gap: 19px;
+    height: auto;
+    justify-content: flex-start;
+    margin-top: 105px;
+    min-height: 115px;
+    width: 1152px;
+  }
+  
+  .settings-account-uiux .footer-line {
+    height: 1px;
+    margin-top: -1px;
+    object-fit: cover;
+    width: 1152px;
+  }
+  
+  .settings-account-uiux .logo-in-footer {
+    cursor: pointer;
+    height: 96px;
+    object-fit: cover;
+    width: 190px;
+  }
+  
+  .settings-account-uiux .settings {
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 90px;
+  }
+  
+  .settings-account-uiux .terms-conditions {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 200px;
+  }
+  
+  .settings-account-uiux .contact-us {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 119px;
+  }
+  
+  .settings-account-uiux .overlap-group-3 {
+    align-items: center;
+    display: flex;
+  }
+  

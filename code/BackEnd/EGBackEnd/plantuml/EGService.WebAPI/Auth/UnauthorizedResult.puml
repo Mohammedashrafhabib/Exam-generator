@@ -1,0 +1,9 @@
+@startuml
+class UnauthorizedResult {
+    + UnauthorizedResult(authHeaderValue:AuthenticationHeaderValue, innerResult:IActionResult)
+    + ExecuteResultAsync(context:ActionContext) : Task
+}
+IActionResult <|-- UnauthorizedResult
+UnauthorizedResult --> "AuthHeaderValue" AuthenticationHeaderValue
+UnauthorizedResult --> "InnerResult" IActionResult
+@enduml

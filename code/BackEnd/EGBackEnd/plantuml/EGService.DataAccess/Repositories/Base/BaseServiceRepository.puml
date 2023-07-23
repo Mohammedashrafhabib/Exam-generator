@@ -1,0 +1,13 @@
+@startuml
+class "BaseServiceRepository`2"<TEntity,TPrimeryKey> {
+    + BaseServiceRepository(context:EGServiceContext, currentUserService:ICurrentUserService)
+}
+class "BaseFrameworkRepository`2"<T1,T2> {
+}
+class "IBaseServiceRepository`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+"BaseFrameworkRepository`2" "<TEntity,TPrimeryKey>" <|-- "BaseServiceRepository`2"
+"IBaseServiceRepository`2" "<TEntity,TPrimeryKey>" <|-- "BaseServiceRepository`2"
+@enduml

@@ -1,0 +1,8 @@
+@startuml
+class Extentions <<static>> {
+    + {static} ToEntity(model:UserViewModel, mapper:AutoMapper.IMapper) : User
+    + {static} ToModel(entity:User, mapper:AutoMapper.IMapper) : UserViewModel
+    + {static} ToDetailModel(entity:User, mapper:AutoMapper.IMapper) : UserDetailViewModel
+    + {static} ToViewViewModel(entity:User, mapper:AutoMapper.IMapper) : UserViewViewModel
+}
+@enduml

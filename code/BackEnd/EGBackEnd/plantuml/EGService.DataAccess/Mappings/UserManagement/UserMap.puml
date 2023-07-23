@@ -1,0 +1,10 @@
+@startuml
+class UserMap {
+    + Configure(builder:EntityTypeBuilder<User>) : void
+}
+class "IEntityTypeConfiguration`1"<T> {
+}
+class "List`1"<T> {
+}
+UserMap --> "Users<User>" "List`1"
+@enduml

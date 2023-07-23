@@ -1,0 +1,5 @@
+@startuml
+interface IUsersService {
+}
+IBaseService <|-- IUsersService
+@enduml

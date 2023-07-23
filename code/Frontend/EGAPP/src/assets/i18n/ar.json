@@ -1,0 +1,58 @@
+{
+  "AppName": "EGAPP",
+  "error": {
+    "0": "Failed Operation",
+
+    "5": "This e-mail already exists, please enter a new e-mail",
+    "7": "",
+    "8": "Email is already used, please insert another Email",
+
+    "17": "The password is incorrect",
+    "20": "Data is Duplicated",
+
+
+    "55": "user is  not active please ask admin to active",
+    "70": "Invalid Operation",
+    "400": "The data entered is incorrect",
+    "0001": "The Email or Password is incorrect ! Please try again or contact technical support",
+
+    "auth": "You don't have permission",
+    "code": {
+      "1": ""
+    },
+    "dataMissing": "Please complete all missing data",
+    "error": "error",
+    
+    "noDataAvailable": "No Data Available",
+    "notFound": "Page not found!",
+ 
+    "pageNotFound": {
+      "title": "Page Not Found"
+    },
+    "shared": {
+      "oldPasswordWrong": "Old Password is Wrong",
+      "operationFailed": "Operation has been failed!",
+      "unregisteredEmail": "Unregistered email, please check the email and try again."
+    },
+    "submit": {
+      "submitionWarningTitle": "submititiond Faild"
+    },
+    "validation": {
+      "addItems": "should Enter Items",
+      "chooseItems": "should Select Items",
+      "email": "The Email Must Be Valid",
+      "max": "Exceded Max value",
+      "maxlength": "Characters count exceed max length!",
+      "min": "shouldn't exceed  min Count",
+      "minlength": "Characters count do not exceed min length!",
+      "mustMatchPassword": "Password not match New Password",
+      "notMatcholdPassword": "this password is already used ,please insert new one",
+      "pattern": {
+        "floatNumber": "invalid! this field should be positive float value",
+        "integerNumber": "Invalid! Number must be integer only ",
+        "invalidNumber": "Invalid Number!"
+      },
+      "required": "This field is required!"
+    }
+  }
+}

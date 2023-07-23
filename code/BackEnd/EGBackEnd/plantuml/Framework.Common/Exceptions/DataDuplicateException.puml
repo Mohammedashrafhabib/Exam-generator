@@ -1,0 +1,7 @@
+@startuml
+class DataDuplicateException {
+    + DataDuplicateException(message:string)
+    + DataDuplicateException()
+    + DataDuplicateException(errorCode:int)
+}
+@enduml

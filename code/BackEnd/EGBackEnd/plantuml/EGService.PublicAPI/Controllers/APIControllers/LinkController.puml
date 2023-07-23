@@ -1,0 +1,9 @@
+@startuml
+class LinkController {
+    + LinkController(LinkService:ILinkService)
+    + <<async>> GetAsync(id:int) : Task<LinkViewModel>
+    + <<async>> SearchLookup(searchModel:LinkLookUpSearchModel) : Task<GenericResult<IList<LinkLookUpViewModel>>>
+    + <<async>> GetDetails(id:int) : Task<LinkViewViewModel>
+}
+ControllerBase <|-- LinkController
+@enduml

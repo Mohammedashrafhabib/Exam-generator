@@ -1,0 +1,7 @@
+@startuml
+class ResultModel {
+}
+class "IList`1"<T> {
+}
+ResultModel --> "QuestionsAnswers<KeyValuePair< string, string>>" "IList`1"
+@enduml

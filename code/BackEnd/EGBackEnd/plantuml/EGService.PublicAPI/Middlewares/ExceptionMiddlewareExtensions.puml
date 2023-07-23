@@ -1,0 +1,6 @@
+@startuml
+class ExceptionMiddlewareExtensions <<static>> {
+    + {static} ConfigureExceptionHandler(app:IApplicationBuilder, logger:ILoggerService) : void
+    + {static} ConfigureCustomExceptionMiddleware(app:IApplicationBuilder) : void
+}
+@enduml

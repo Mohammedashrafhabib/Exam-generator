@@ -1,0 +1,9 @@
+@startuml
+class JwtService {
+    + <<const>> SecretKey : string = "JIOBLi6eVjBpvGtWBgJzjWd2QH0sOn5tI8rIFXSHKijXWEt/3J2jFYL79DQ1vKu+EtTYgYkwTluFRDdtF41yAQ=="
+    + GenerateJWTToken(id:string, permissions:string, expire_in_Minutes:int) : string
+    + GetPrincipal(token:string) : ClaimsPrincipal
+    + GetPermissions(token:string) : List<int>
+}
+IJwtService <|-- JwtService
+@enduml

@@ -1,0 +1,10 @@
+@startuml
+class "RepositoryRequestConditionFilter`2"<TEntity,TKey> {
+    + RepositoryRequestConditionFilter(repositoryRequest:RepositoryRequest)
+    + RepositoryRequestConditionFilter()
+}
+class "Expression`1"<T> {
+}
+RepositoryRequest <|-- "RepositoryRequestConditionFilter`2"
+"RepositoryRequestConditionFilter`2" --> "Query<Func<TEntity, bool>>" "Expression`1"
+@enduml

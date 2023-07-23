@@ -1,0 +1,5 @@
+@startuml
+interface IDateTimeSignature {
+}
+ICreationTimeSignature <|-- IDateTimeSignature
+@enduml

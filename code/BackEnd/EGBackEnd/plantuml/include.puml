@@ -1,0 +1,90 @@
+@startuml
+!include .\\EGService.DependancyInjection\ContainerConfiguration.puml
+!include .\\EGService.WebAPI\Program.puml
+!include .\\EGService.WebAPI\Startup.puml
+!include .\\EGService.Business\Common\CurrentUserService.puml
+!include .\\EGService.Business\Common\JwtService.puml
+!include .\\EGService.Business\Common\LoggerService.puml
+!include .\\EGService.Business\Common\MailNotificationService.puml
+!include .\\EGService.Business\Services\ExamGenrator.puml
+!include .\\EGService.Core\AutoMapper\Extentions.puml
+!include .\\EGService.Core\AutoMapper\Profile.puml
+!include .\\EGService.Core\Common\ApplicationGlobalConfig.puml
+!include .\\EGService.Core\Common\IJwtService.puml
+!include .\\EGService.Core\Helper\HashPass.puml
+!include .\\EGService.Core\IServices\IExamGenrator.puml
+!include .\\EGService.DataAccess\Contexts\EGServiceContext.puml
+
+!include .\\EGService.DataAccess\Repositories\UnitOfWork.puml
+!include .\\EGService.DataAccess\Repositories\UnitOfWorkAsync.puml
+!include .\\EGService.DataAccess\Seed\UserSeed.puml
+
+!include .\\EGService.WebAPI\Auth\AuthFailureResult.puml
+!include .\\EGService.WebAPI\Auth\JwtAuthentication.puml
+!include .\\EGService.WebAPI\Auth\UnauthorizedResult.puml
+!include .\\EGService.WebAPI\Filters\HttpResponseExceptionFilter.puml
+!include .\\EGService.WebAPI\Middlewares\ExceptionMiddleware.puml
+!include .\\EGService.WebAPI\Middlewares\ExceptionMiddlewareExtensions.puml
+!include .\\EGService.WebAPI\Models\ExceptionModel.puml
+
+!include .\\Framework.Common\Exceptions\DataDuplicateException.puml
+!include .\\Framework.Common\Exceptions\DataValidationException.puml
+!include .\\Framework.Common\Exceptions\HttpResponseException.puml
+!include .\\Framework.Common\Exceptions\InvalidOperationException.puml
+!include .\\Framework.Common\Exceptions\ItemAlreadyExistException.puml
+!include .\\Framework.Common\Exceptions\ItemNotFoundException.puml
+!include .\\Framework.Common\Interfaces\ICreationTimeSignature.puml
+!include .\\Framework.Common\Interfaces\IDateTimeSignature.puml
+!include .\\Framework.Common\Interfaces\IDeletionSignature.puml
+!include .\\Framework.Common\Interfaces\IEntityCreatedUserSignature.puml
+!include .\\Framework.Common\Interfaces\IEntityIdentity.puml
+!include .\\Framework.Common\Interfaces\IEntityUserSignature.puml
+!include .\\Framework.Core\Common\ICurrentUserService.puml
+!include .\\Framework.Core\Common\ILoggerService.puml
+!include .\\Framework.Core\Common\IMailNotification.puml
+!include .\\Framework.Core\Common\Pagination.puml
+!include .\\Framework.Core\Common\RepoExtention.puml
+!include .\\Framework.Core\Common\RepositoryRequest.puml
+!include .\\Framework.Core\Common\RepositoryRequestConditionFilter.puml
+!include .\\Framework.Core\IRepositories\IUnitOfWork.puml
+!include .\\Framework.Core\IRepositories\IUnitOfWorkAsync.puml
+!include .\\Framework.Core\Models\ErrorDetails.puml
+!include .\\Framework.Core\Models\GenericResult.puml
+!include .\\EGService.Business\Services\Base\BaseService.puml
+!include .\\EGService.Business\Services\UserManagement\UsersService.puml
+!include .\\EGService.Core\IRepositories\Base\IBaseServiceRepository.puml
+!include .\\EGService.Core\IRepositories\Base\IBaseServiceRepositoryAsync.puml
+!include .\\EGService.Core\IRepositories\UserManagement\IUsersRepositoryAsync.puml
+!include .\\EGService.Core\IServices\Base\IBaseService.puml
+!include .\\EGService.Core\IServices\UserManagement\IUsersService.puml
+!include .\\EGService.Core\Models\ViewModels\GenericCollectionViewModel.puml
+!include .\\EGService.Core\Models\ViewModels\NameValueNumericViewModel.puml
+!include .\\EGService.DataAccess\Mappings\UserManagement\UserMap.puml
+!include .\\EGService.DataAccess\Repositories\Base\BaseServiceRepository.puml
+!include .\\EGService.DataAccess\Repositories\Base\BaseServiceRepositoryAsync.puml
+!include .\\EGService.DataAccess\Repositories\UserManagement\UsersRepositoryAsync.puml
+!include .\\EGService.Entity\Entities\UserManagement\User.puml
+
+!include .\\EGService.WebAPI\Controllers\APIControllers\ExamGenratorController.puml
+!include .\\Framework.Common\Exceptions\Base\BaseException.puml
+!include .\\Framework.Core\IRepositories\Base\IBaseFrameworkRepository.puml
+!include .\\Framework.Core\IRepositories\Base\IBaseFrameworkRepositoryAsync.puml
+!include .\\Framework.DataAccess\Repositories\Base\BaseFrameworkRepository.puml
+!include .\\Framework.DataAccess\Repositories\Base\BaseFrameworkRepositoryAsync.puml
+
+!include .\\EGService.Core\Models\ViewModels\Base\BaseViewModel.puml
+!include .\\EGService.Core\Models\ViewModels\ExamGenrator\contextModel.puml
+!include .\\EGService.Core\Models\ViewModels\ExamGenrator\ResultModel.puml
+
+!include .\\EGService.WebAPI\Controllers\APIControllers\Base\BaseAPIController.puml
+!include .\\EGService.WebAPI\Controllers\APIControllers\UserManagement\UsersController.puml
+
+
+!include .\\EGService.Core\Models\ViewModels\UserManagement\User\ChangePasswordViewModel.puml
+!include .\\EGService.Core\Models\ViewModels\UserManagement\User\CurrentUserViewModel.puml
+!include .\\EGService.Core\Models\ViewModels\UserManagement\User\LoginViewModel.puml
+!include .\\EGService.Core\Models\ViewModels\UserManagement\User\UserDetailViewModel.puml
+!include .\\EGService.Core\Models\ViewModels\UserManagement\User\UserLoggedInViewModel.puml
+!include .\\EGService.Core\Models\ViewModels\UserManagement\User\UserViewModel.puml
+!include .\\EGService.Core\Models\ViewModels\UserManagement\User\UserViewViewModel.puml
+@enduml

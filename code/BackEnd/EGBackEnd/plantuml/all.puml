@@ -1,0 +1,666 @@
+@startuml
+
+class UsersService {
+    + UsersService(mapper:IMapper, logger:ILoggerService, unitOfWorkAsync:IUnitOfWorkAsync, UsersRepositoryAsync:IUsersRepositoryAsync, currentUserService:ICurrentUserService, jwtService:IJwtService, mailNotification:IMailNotification)
+    + <<async>> ValidateModelAsync(model:UserViewModel) : Task
+    + <<async>> ValidateModelAsync(modelCollection:IEnumerable<UserViewModel>) : Task
+    + <<async>> GetAsync(id:long) : Task<UserViewModel>
+    + <<async>> GetDetailsAsync(id:long) : Task<UserDetailViewModel>
+    + <<async>> AddAsync(model:UserViewModel) : Task<UserViewModel>
+    + <<async>> UpdateAsync(model:UserViewModel) : Task<UserViewModel>
+    + <<async>> DeleteAsync(id:long) : Task
+    + Login(model:LoginViewModel) : UserLoggedInViewModel
+    + <<async>> ChangePasswordAsync(model:ChangePasswordViewModel) : Task
+    + <<async>> ResetPasswordAsync(userId:long) : Task
+    + <<async>> GetCurrentUser() : Task<CurrentUserViewModel>
+    + <<async>> ForgotPassword(forgotPasswordModel:ForgotPasswordModel) : Task<bool>
+}
+IUsersService <|-- UsersService
+
+class ExamGenrator {
+    + ExamGenrator(IConfiguration:IConfiguration, logger:ILoggerService)
+    + AnswerExtractionModel(Context:string) : IList<string>
+    + IntrogativeWordModel(Context:string, answer:string) : string
+    + QuestionGenrationModel(Context:string, Answers:IList<string>, IntrogativeWords:IList<string>) : IList<string>
+    + Distractors(context:string) : List<KeyValuePair<string, string[]>>
+    + Sent_Tokenizer(context:string) : List<string>
+    + Genarate(contextModel:contextModel) : ResultModel
+}
+IExamGenrator <|-- ExamGenrator
+
+interface BaseService {
+}
+
+class CurrentUserService {
+    + CurrentUserService(httpContext:IHttpContextAccessor)
+    + CurrentUserId : long? <<get>>
+}
+ICurrentUserService <|-- CurrentUserService
+
+class JwtService {
+    + <<const>> SecretKey : string = "JIOBLi6eVjBpvGtWBgJzjWd2QH0sOn5tI8rIFXSHKijXWEt/3J2jFYL79DQ1vKu+EtTYgYkwTluFRDdtF41yAQ=="
+    + GenerateJWTToken(id:string, permissions:string, expire_in_Minutes:int) : string
+    + GetPrincipal(token:string) : ClaimsPrincipal
+    + GetPermissions(token:string) : List<int>
+}
+IJwtService <|-- JwtService
+
+class LoggerService {
+    + LoggerService(httpContext:IHttpContextAccessor)
+    + Log(content:string, type:LogType, customFileName:string) : void
+    + LogError(content:string) : void
+    + LogError(ex:Exception) : void
+    + LogInfo(content:string, customFileName:string) : void
+    + LogText(content:string, customFileName:string) : void
+    + LogWarning(content:string, customFileName:string) : void
+}
+ILoggerService <|-- LoggerService
+
+class MailNotificationService {
+    + MailNotificationService(config:IConfiguration)
+    + <<async>> SendMail(to:string, cc:string, bcc:string, subject:string, body:string) : Task<bool>
+    + <<async>> SendMail(to:List<string>, cc:List<string>, bcc:List<string>, subject:string, body:string) : Task<bool>
+}
+IMailNotification <|-- MailNotificationService
+
+enum ErrorCode {
+    NotFound= 1,
+    CodeAlreadyExist= 3,
+    EmailAlreadyExist= 5,
+    UserNameAlreadyExist= 8,
+    PasswordIncorrect= 17,
+    InActiveUser= 55,
+    InvalidOperationException=70,
+}
+
+class Extentions <<static>> {
+    + {static} ToEntity(model:UserViewModel, mapper:AutoMapper.IMapper) : User
+    + {static} ToModel(entity:User, mapper:AutoMapper.IMapper) : UserViewModel
+    + {static} ToDetailModel(entity:User, mapper:AutoMapper.IMapper) : UserDetailViewModel
+    + {static} ToViewViewModel(entity:User, mapper:AutoMapper.IMapper) : UserViewViewModel
+}
+
+class Profile {
+    + Profile()
+}
+Profile --> "ApplicationBuilder" IApplicationBuilder
+
+class ApplicationGlobalConfig <<static>> {
+    + {static} EnableSeedOnMigration : bool <<get>> <<set>>
+}
+class Schema <<static>> {
+    + {static} DefaultSchema : string <<get>>
+    + {static} UserManagementSchema : string <<get>>
+}
+ApplicationGlobalConfig +-- Schema
+
+interface IJwtService {
+}
+
+class HashPass <<static>> {
+    + {static} HashPassword(password:string) : string
+}
+
+interface IUsersRepositoryAsync {
+}
+class "IBaseServiceRepositoryAsync`2"<T1,T2> {
+}
+
+interface "IBaseServiceRepository`2"<TEntity,TPrimeryKey> {
+}
+class "IBaseFrameworkRepository`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+"IBaseFrameworkRepository`2" "<TEntity,TPrimeryKey>" <|-- "IBaseServiceRepository`2"
+
+interface "IBaseServiceRepositoryAsync`2"<TEntity,TPrimeryKey> {
+}
+class "IBaseFrameworkRepositoryAsync`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+"IBaseFrameworkRepositoryAsync`2" "<TEntity,TPrimeryKey>" <|-- "IBaseServiceRepositoryAsync`2"
+
+interface IBaseService {
+}
+
+interface IExamGenrator {
+    + Genarate(Context:contextModel) : ResultModel
+}
+
+interface IUsersService {
+}
+IBaseService <|-- IUsersService
+
+class BaseViewModel {
+}
+
+class contextModel {
+    + context : string <<get>> <<set>>
+    + MCQ : bool <<get>> <<set>>
+    + COMPLETE : bool <<get>> <<set>>
+    + WH : bool <<get>> <<set>>
+    + T_F : bool <<get>> <<set>>
+}
+
+class ResultModel {
+}
+class "IList`1"<T> {
+}
+ResultModel --> "QuestionsAnswers<KeyValuePair< string, string>>" "IList`1"
+
+class ChangePasswordViewModel {
+    + UserId : long <<get>> <<set>>
+    + OldPassword : string <<get>> <<set>>
+    + NewPassword : string <<get>> <<set>>
+    + ConfirmPassword : string <<get>> <<set>>
+}
+
+class LoginViewModel {
+    + UserName : string <<get>> <<set>>
+    + Password : string <<get>> <<set>>
+}
+
+class CurrentUserViewModel {
+    + CurrentUserViewModel()
+    + Id : long <<get>> <<set>>
+}
+
+class UserDetailViewModel {
+    + UserDetailViewModel()
+    + Id : long <<get>> <<set>>
+    + FirstModificationDate : DateTime? <<get>> <<set>>
+    + LastModificationDate : DateTime? <<get>> <<set>>
+    + CreatedByUserId : long? <<get>> <<set>>
+    + FirstModifiedByUserId : long? <<get>> <<set>>
+    + LastModifiedByUserId : long? <<get>> <<set>>
+    + IsDeleted : bool <<get>> <<set>>
+    + DeletionDate : DateTime? <<get>> <<set>>
+    + DeletedByUserId : long? <<get>> <<set>>
+    + MustDeletedPhysical : bool? <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+}
+class "Nullable`1"<T> {
+}
+UserDetailViewModel --> "CreationDate" DateTime
+UserDetailViewModel --> "IsActive<System.Boolean>" "Nullable`1"
+
+
+class UserLoggedInViewModel {
+    + access_token : string <<get>> <<set>>
+    + token_type : string <<get>> <<set>>
+    + expires_in : long <<get>> <<set>>
+    + Id : long <<get>> <<set>>
+    + UserName : string <<get>> <<set>>
+    + FirstName : string <<get>> <<set>>
+    + LastName : string <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+    + issued : DateTime? <<get>> <<set>>
+    + expires : DateTime? <<get>> <<set>>
+    + IsFirstTimeLogin : bool <<get>> <<set>>
+}
+
+class UserViewModel {
+    + UserViewModel()
+    + Id : long <<get>> <<set>>
+    + FirstModificationDate : DateTime? <<get>> <<set>>
+    + LastModificationDate : DateTime? <<get>> <<set>>
+    + CreatedByUserId : long? <<get>> <<set>>
+    + FirstModifiedByUserId : long? <<get>> <<set>>
+    + LastModifiedByUserId : long? <<get>> <<set>>
+    + IsDeleted : bool <<get>> <<set>>
+    + DeletionDate : DateTime? <<get>> <<set>>
+    + DeletedByUserId : long? <<get>> <<set>>
+    + MustDeletedPhysical : bool? <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+}
+class "Nullable`1"<T> {
+}
+UserViewModel --> "CreationDate" DateTime
+UserViewModel --> "IsActive<System.Boolean>" "Nullable`1"
+
+class UserViewViewModel {
+    + UserViewViewModel()
+    + Id : long <<get>> <<set>>
+    + FirstModificationDate : DateTime? <<get>> <<set>>
+    + LastModificationDate : DateTime? <<get>> <<set>>
+    + CreatedByUserId : long? <<get>> <<set>>
+    + FirstModifiedByUserId : long? <<get>> <<set>>
+    + LastModifiedByUserId : long? <<get>> <<set>>
+    + IsDeleted : bool <<get>> <<set>>
+    + DeletionDate : DateTime? <<get>> <<set>>
+    + DeletedByUserId : long? <<get>> <<set>>
+    + MustDeletedPhysical : bool? <<get>> <<set>>
+}
+class "Nullable`1"<T> {
+}
+UserViewViewModel --> "CreationDate" DateTime
+UserViewViewModel --> "IsActive<System.Boolean>" "Nullable`1"
+
+class "GenericCollectionViewModel`1"<TViewModel> {
+    + GenericCollectionViewModel()
+    + GenericCollectionViewModel(collection:IList<TViewModel>, totalCount:long, pageIndex:int?, pageSize:int?)
+    + TotalCount : long <<get>> <<set>>
+    + PageIndex : int? <<get>> <<set>>
+    + PageSize : int? <<get>> <<set>>
+}
+class "IList`1"<T> {
+}
+"GenericCollectionViewModel`1" --> "Collection<TViewModel>" "IList`1"
+
+class NameValueNumericViewModel {
+    + Id : long <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+}
+class NameValueViewModel {
+    + Value : long <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+}
+
+class EGServiceContext {
+    + EGServiceContext(options:DbContextOptions)
+}
+class "DbSet`1"<T> {
+}
+DbContext <|-- EGServiceContext
+EGServiceContext --> "Users<User>" "DbSet`1"
+
+class UserMap {
+    + Configure(builder:EntityTypeBuilder<User>) : void
+}
+class "IEntityTypeConfiguration`1"<T> {
+}
+class "List`1"<T> {
+}
+UserMap --> "Users<User>" "List`1"
+
+class "BaseServiceRepository`2"<TEntity,TPrimeryKey> {
+    + BaseServiceRepository(context:EGServiceContext, currentUserService:ICurrentUserService)
+}
+class "BaseFrameworkRepository`2"<T1,T2> {
+}
+class "IBaseServiceRepository`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+"BaseFrameworkRepository`2" "<TEntity,TPrimeryKey>" <|-- "BaseServiceRepository`2"
+"IBaseServiceRepository`2" "<TEntity,TPrimeryKey>" <|-- "BaseServiceRepository`2"
+
+class "BaseServiceRepositoryAsync`2"<TEntity,TPrimeryKey> {
+    + BaseServiceRepositoryAsync(context:EGServiceContext, currentUserService:ICurrentUserService)
+}
+class "BaseFrameworkRepositoryAsync`2"<T1,T2> {
+}
+class "IBaseServiceRepositoryAsync`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+"BaseFrameworkRepositoryAsync`2" "<TEntity,TPrimeryKey>" <|-- "BaseServiceRepositoryAsync`2"
+"IBaseServiceRepositoryAsync`2" "<TEntity,TPrimeryKey>" <|-- "BaseServiceRepositoryAsync`2"
+
+class UsersRepositoryAsync {
+    + UsersRepositoryAsync(context:EGServiceContext, currentUserService:ICurrentUserService)
+    + Login(userName:string) : User
+}
+class "BaseServiceRepositoryAsync`2"<T1,T2> {
+}
+IUsersRepositoryAsync <|-- UsersRepositoryAsync
+
+class UnitOfWork {
+    + UnitOfWork(context:EGServiceContext)
+    + Commit() : int
+}
+IUnitOfWork <|-- UnitOfWork
+
+class UnitOfWorkAsync {
+    + UnitOfWorkAsync(context:EGServiceContext)
+    + <<async>> CommitAsync() : Task<int>
+}
+IUnitOfWorkAsync <|-- UnitOfWorkAsync
+
+class UserSeed {
+}
+class "List`1"<T> {
+}
+UserSeed --> "SeedList<User>" "List`1"
+
+class ContainerConfiguration {
+    + {static} Configure(services:IServiceCollection, configuration:IConfiguration) : void
+}
+
+class User {
+    + User()
+    + Id : long <<get>> <<set>>
+    + FirstModificationDate : DateTime? <<get>> <<set>>
+    + LastModificationDate : DateTime? <<get>> <<set>>
+    + CreatedByUserId : long? <<get>> <<set>>
+    + FirstModifiedByUserId : long? <<get>> <<set>>
+    + LastModifiedByUserId : long? <<get>> <<set>>
+    + IsDeleted : bool <<get>> <<set>>
+    + DeletionDate : DateTime? <<get>> <<set>>
+    + DeletedByUserId : long? <<get>> <<set>>
+    + MustDeletedPhysical : bool? <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+}
+class "IEntityIdentity`1"<T> {
+}
+class "Nullable`1"<T> {
+}
+"IEntityIdentity`1" "<long>" <|-- User
+IDateTimeSignature <|-- User
+IDeletionSignature <|-- User
+User --> "CreationDate" DateTime
+User --> "IsActive<System.Boolean>" "Nullable`1"
+
+class AuthFailureResult {
+    + AuthFailureResult(reasonPhrase:string, response:HttpResponse)
+    + ReasonPhrase : string <<get>>
+    + ExecuteAsync(cancellationToken:CancellationToken) : Task<HttpResponse>
+    + ExecuteResultAsync(context:ActionContext) : Task
+}
+IActionResult <|-- AuthFailureResult
+AuthFailureResult --> "Request" HttpResponse
+
+class JwtAuthentication {
+    + JwtAuthentication()
+    + OnActionExecuted(context:ActionExecutedContext) : void
+    + OnActionExecuting(context:ActionExecutingContext) : void
+    + Realm : string <<get>> <<set>>
+    + AllowMultiple : bool <<get>>
+    + AuthenticationSchemes : string <<get>> <<set>>
+    + Policy : string <<get>> <<set>>
+    + Roles : string <<get>> <<set>>
+}
+Attribute <|-- JwtAuthentication
+IActionFilter <|-- JwtAuthentication
+
+class UnauthorizedResult {
+    + UnauthorizedResult(authHeaderValue:AuthenticationHeaderValue, innerResult:IActionResult)
+    + ExecuteResultAsync(context:ActionContext) : Task
+}
+IActionResult <|-- UnauthorizedResult
+UnauthorizedResult --> "AuthHeaderValue" AuthenticationHeaderValue
+UnauthorizedResult --> "InnerResult" IActionResult
+
+class BaseAPIController {
+}
+ControllerBase <|-- BaseAPIController
+
+class UsersController {
+    + UsersController(UsersService:IUsersService)
+    + <<async>> GetAsync(id:long) : Task<UserViewModel>
+    + <<async>> AddAsync(model:UserViewModel) : Task<UserViewModel>
+    + <<async>> UpdateAsync(model:UserViewModel) : Task<UserViewModel>
+    + <<async>> DeleteAsync(id:long) : Task
+    + LoginInternal(model:LoginViewModel) : IActionResult
+    + <<async>> ChangePasswordAsync(model:ChangePasswordViewModel) : Task<IActionResult>
+    + <<async>> ResetPasswordAsync(userId:long) : Task<IActionResult>
+    + <<async>> GetCurrentUser() : Task<CurrentUserViewModel>
+    + <<async>> ForgotPassword(forgotPasswordModel:ForgotPasswordModel) : Task<bool>
+    + <<async>> GetDetails(id:long) : Task<UserDetailViewModel>
+}
+ControllerBase <|-- UsersController
+
+class ExamGenratorController {
+    + ExamGenratorController(examGenrator:IExamGenrator)
+    + Genarate(context:contextModel) : ResultModel
+}
+ControllerBase <|-- ExamGenratorController
+
+class HttpResponseExceptionFilter {
+    + HttpResponseExceptionFilter()
+    + Order : int <<get>>
+    + OnActionExecuting(context:ActionExecutingContext) : void
+    + OnActionExecuted(context:ActionExecutedContext) : void
+}
+IActionFilter <|-- HttpResponseExceptionFilter
+IOrderedFilter <|-- HttpResponseExceptionFilter
+
+class ExceptionMiddleware {
+    + ExceptionMiddleware(next:RequestDelegate, logger:ILoggerService)
+    + <<async>> InvokeAsync(httpContext:HttpContext) : Task
+}
+
+class ExceptionMiddlewareExtensions <<static>> {
+    + {static} ConfigureExceptionHandler(app:IApplicationBuilder, logger:ILoggerService) : void
+    + {static} ConfigureCustomExceptionMiddleware(app:IApplicationBuilder) : void
+}
+
+class ExceptionModel {
+    + RequestTime : DateTime? <<get>> <<set>>
+    + StatusCode : int <<get>> <<set>>
+    + Message : string <<get>> <<set>>
+    + StackTrace : string <<get>> <<set>>
+    + ErrorCode : int <<get>> <<set>>
+}
+
+class Program {
+    + {static} Main(args:string[]) : void
+    + {static} CreateHostBuilder(args:string[]) : IHostBuilder
+}
+
+class Startup {
+    + Startup(configuration:IConfiguration)
+    + ConfigureServices(services:IServiceCollection) : void
+    + Configure(app:IApplicationBuilder, env:IWebHostEnvironment, logger:ILoggerService, backgroundJobClient:IBackgroundJobClient, recurringJobManager:IRecurringJobManager, serviceProvider:IServiceProvider) : void
+}
+Startup --> "Configuration" IConfiguration
+
+class ApplicationConstants {
+    + {static} AuthFailureCode : int <<get>>
+}
+
+enum LogType {
+    Information,
+    Warning,
+    Error,
+    Text,
+}
+
+class BaseException {
+    + BaseException()
+    + BaseException(message:string)
+    + BaseException(message:string, innerException:Exception)
+    + BaseException(errorCode:int)
+    + BaseException(errorCode:int, message:string)
+    + ErrorCode : int <<get>> <<set>>
+}
+ApplicationException <|-- BaseException
+
+class DataDuplicateException {
+    + DataDuplicateException(message:string)
+    + DataDuplicateException()
+    + DataDuplicateException(errorCode:int)
+}
+
+class DataValidationException {
+    + DataValidationException(message:string)
+    + DataValidationException()
+    + DataValidationException(errorCode:int)
+    + DataValidationException(errorCode:int, message:string)
+}
+
+class HttpResponseException {
+    + Status : int <<get>> <<set>> = 500
+    + Value : object <<get>> <<set>>
+}
+Exception <|-- HttpResponseException
+
+class InvalidOperationException {
+    + InvalidOperationException(message:string)
+    + InvalidOperationException()
+    + InvalidOperationException(errorCode:int)
+}
+
+class ItemAlreadyExistException {
+    + ItemAlreadyExistException(message:string)
+    + ItemAlreadyExistException()
+    + ItemAlreadyExistException(errorCode:int)
+}
+
+class ItemNotFoundException {
+    + ItemNotFoundException(message:string)
+    + ItemNotFoundException()
+    + ItemNotFoundException(errorCode:int)
+    + ItemNotFoundException(errorCode:int, message:string)
+}
+
+interface ICreationTimeSignature {
+}
+
+interface IDeletionSignature {
+    + IsDeleted : bool <<get>> <<set>>
+    + DeletionDate : DateTime? <<get>> <<set>>
+    + DeletedByUserId : long? <<get>> <<set>>
+    + MustDeletedPhysical : bool? <<get>> <<set>>
+}
+
+interface IEntityCreatedUserSignature {
+}
+
+interface "IEntityIdentity`1"<TPrimeryKey> {
+    + Id : TPrimeryKey <<get>> <<set>>
+}
+
+interface IEntityUserSignature {
+}
+IEntityCreatedUserSignature <|-- IEntityUserSignature
+
+interface ICurrentUserService {
+}
+
+interface IMailNotification {
+}
+
+interface ILoggerService {
+}
+
+class Pagination {
+    + PageIndex : int? <<get>> <<set>> = 0
+    + PageSize : int? <<get>> <<set>> = 10
+    + TotalCount : long? <<get>> <<set>>
+    + GetTotalCount : bool <<get>> <<set>> = true
+}
+
+class RepoExtention <<static>> {
+    + {static} WhereIf(entities:IQueryable<TEntity>, condition:Func<bool>, predicate:Expression<Func<TEntity, bool>>) : IQueryable<TEntity>
+    + {static} WhereIf(entities:IQueryable<TEntity>, condition:bool, predicate:Expression<Func<TEntity, bool>>) : IQueryable<TEntity>
+}
+
+class RepositoryRequest {
+    + RepositoryRequest(repositoryRequest:RepositoryRequest)
+    + RepositoryRequest()
+    + Sorting : string <<get>> <<set>>
+}
+class "IList`1"<T> {
+}
+class "Nullable`1"<T> {
+}
+RepositoryRequest --> "Pagination" Pagination
+RepositoryRequest --> "IncludedNavigationsList<string>" "IList`1"
+RepositoryRequest --> "Order<Order>" "Nullable`1"
+
+class "RepositoryRequestConditionFilter`2"<TEntity,TKey> {
+    + RepositoryRequestConditionFilter(repositoryRequest:RepositoryRequest)
+    + RepositoryRequestConditionFilter()
+}
+class "Expression`1"<T> {
+}
+RepositoryRequest <|-- "RepositoryRequestConditionFilter`2"
+"RepositoryRequestConditionFilter`2" --> "Query<Func<TEntity, bool>>" "Expression`1"
+
+interface "IBaseFrameworkRepository`2"<TEntity,TPrimeryKey> {
+}
+class "IEntityIdentity`1"<T> {
+}
+
+interface "IBaseFrameworkRepositoryAsync`2"<TEntity,TPrimeryKey> {
+}
+class "IEntityIdentity`1"<T> {
+}
+IAsyncDisposable <|-- "IBaseFrameworkRepositoryAsync`2"
+
+interface IUnitOfWork {
+}
+
+interface IUnitOfWorkAsync {
+}
+
+class ErrorDetails {
+    + <<override>> ToString() : string
+    + StatusCode : int <<get>> <<set>>
+    + Message : string <<get>> <<set>>
+    + ErrorCode : int <<get>> <<set>>
+}
+
+class "GenericResult`1"<TCollection> {
+    + Collection : TCollection <<get>> <<set>>
+}
+"GenericResult`1" --> "Pagination" Pagination
+
+class "BaseFrameworkRepository`2"<TEntity,TPrimeryKey> {
+    + BaseFrameworkRepository(context:DbContext, currentUserService:ICurrentUserService)
+    + Dispose() : void
+    + <<virtual>> GetCount() : long
+    + <<virtual>> GetCount(predicate:Expression<Func<TEntity, bool>>) : long
+    + SetIncludedNavigationsList(source:IQueryable<TEntity>, list:IEnumerable<string>) : IQueryable<TEntity>
+    + SetSortOrder(source:IQueryable<TEntity>, sortOrder:string) : IQueryable<TEntity>
+    + SetPaginationCount(source:IQueryable<TEntity>, pagination:Pagination) : Pagination
+    + SetPagination(source:IQueryable<TEntity>, pagination:Pagination) : IQueryable<TEntity>
+    + <<virtual>> Get(conditionFilter:RepositoryRequestConditionFilter<TEntity, TPrimeryKey>) : IQueryable<TEntity>
+    + <<virtual>> Get(repositoryRequest:RepositoryRequest) : IQueryable<TEntity>
+    + <<virtual>> FirstOrDefault(predicate:Expression<Func<TEntity, bool>>, includedNavigationsList:string[]) : TEntity
+    + <<virtual>> Get(id:TPrimeryKey) : TEntity
+    + <<virtual>> Add(entityCollection:IEnumerable<TEntity>) : IList<TEntity>
+    + <<virtual>> Add(entity:TEntity) : TEntity
+    + <<virtual>> Update(entityCollection:IEnumerable<TEntity>) : IQueryable<TEntity>
+    + <<virtual>> Update(entity:TEntity) : TEntity
+    + <<virtual>> Delete(id:TPrimeryKey) : void
+    + <<virtual>> Delete(idCollection:IEnumerable<TPrimeryKey>) : void
+    + <<virtual>> Delete(entity:TEntity) : void
+    + <<virtual>> Delete(entityCollection:IEnumerable<TEntity>) : void
+}
+class "IBaseFrameworkRepository`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+IDisposable <|-- "BaseFrameworkRepository`2"
+"IBaseFrameworkRepository`2" "<TEntity,TPrimeryKey>" <|-- "BaseFrameworkRepository`2"
+
+class "BaseFrameworkRepositoryAsync`2"<TEntity,TPrimeryKey> {
+    + BaseFrameworkRepositoryAsync(context:DbContext, currentUserService:ICurrentUserService)
+    + Dispose() : void
+    + DisposeAsync() : ValueTask
+    + <<virtual>> <<async>> GetCountAsync() : Task<long>
+    + <<virtual>> <<async>> GetCountAsync(predicate:Expression<Func<TEntity, bool>>) : Task<long>
+    + <<async>> SetIncludedNavigationsListAsync(source:IQueryable<TEntity>, list:IEnumerable<string>) : Task<IQueryable<TEntity>>
+    + <<async>> SetSortOrderAsync(source:IQueryable<TEntity>, sortOrder:string) : Task<IQueryable<TEntity>>
+    + <<async>> SetPaginationCountAsync(source:IQueryable<TEntity>, pagination:Pagination) : Task<Pagination>
+    + <<async>> SetPaginationAsync(source:IQueryable<TEntity>, pagination:Pagination) : Task<IQueryable<TEntity>>
+    + <<virtual>> <<async>> GetAsync(conditionFilter:RepositoryRequestConditionFilter<TEntity, TPrimeryKey>) : Task<IQueryable<TEntity>>
+    + <<virtual>> <<async>> GetAsync(repositoryRequest:RepositoryRequest) : Task<IQueryable<TEntity>>
+    + <<virtual>> <<async>> FirstOrDefaultAsync(predicate:Expression<Func<TEntity, bool>>, includedNavigationsList:string[]) : Task<TEntity>
+    + <<virtual>> <<async>> GetAsync(id:TPrimeryKey) : Task<TEntity>
+    + <<virtual>> <<async>> AddAsync(entityCollection:IEnumerable<TEntity>) : Task<IList<TEntity>>
+    + <<virtual>> <<async>> AddAsync(entity:TEntity) : Task<TEntity>
+    + <<virtual>> <<async>> UpdateAsync(entityCollection:IEnumerable<TEntity>) : Task<IQueryable<TEntity>>
+    + <<virtual>> <<async>> UpdateAsync(entity:TEntity) : Task<TEntity>
+    + <<virtual>> <<async>> DeleteAsync(id:TPrimeryKey) : Task
+    + <<virtual>> <<async>> DeleteAsync(idCollection:IEnumerable<TPrimeryKey>) : Task
+    + <<virtual>> <<async>> DeleteAsync(entity:TEntity) : Task
+    + <<virtual>> <<async>> DeleteAsync(entityCollection:IEnumerable<TEntity>) : Task
+    + <<async>> GetAsync(predicate:Expression<Func<TEntity, bool>>, includedNavigationsList:string[]) : Task<IList<TEntity>>
+}
+class "IBaseFrameworkRepositoryAsync`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+IDisposable <|-- "BaseFrameworkRepositoryAsync`2"
+IAsyncDisposable <|-- "BaseFrameworkRepositoryAsync`2"
+"IBaseFrameworkRepositoryAsync`2" "<TEntity,TPrimeryKey>" <|-- "BaseFrameworkRepositoryAsync`2"
+
+@enduml
+
+

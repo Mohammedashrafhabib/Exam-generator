@@ -1,0 +1,7 @@
+@startuml
+class ExamGenratorController {
+    + ExamGenratorController(examGenrator:IExamGenrator)
+    + Genarate(context:contextModel) : ResultModel
+}
+ControllerBase <|-- ExamGenratorController
+@enduml

@@ -1,0 +1,14 @@
+@startuml
+class JwtAuthentication {
+    + JwtAuthentication()
+    + OnActionExecuted(context:ActionExecutedContext) : void
+    + OnActionExecuting(context:ActionExecutingContext) : void
+    + Realm : string <<get>> <<set>>
+    + AllowMultiple : bool <<get>>
+    + AuthenticationSchemes : string <<get>> <<set>>
+    + Policy : string <<get>> <<set>>
+    + Roles : string <<get>> <<set>>
+}
+Attribute <|-- JwtAuthentication
+IActionFilter <|-- JwtAuthentication
+@enduml

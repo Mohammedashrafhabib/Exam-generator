@@ -1,0 +1,8 @@
+@startuml
+enum LogType {
+    Information,
+    Warning,
+    Error,
+    Text,
+}
+@enduml

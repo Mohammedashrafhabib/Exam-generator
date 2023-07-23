@@ -1,0 +1,66 @@
+
+<div class="container-center-horizontal">
+  <form class="generate-uiux screen" [formGroup]="genrateForm" name="form1" action="form1" method="post">
+      <div class="overlap-group13">
+        <div class="overlap-group12">
+          <!-- <img class="side-photo" src="./assets/media/img/rectangle-14.png" alt="side photo" /> -->
+          <div class="main-content">
+            <div class="main-text">
+              <div class="overlap-group-2">
+                <textarea class="type-here" formControlName="context"  name="typehere" placeholder="Type here..." type="text"></textarea>
+              </div>
+            </div>
+            <div *ngIf="isloading">
+              <app-loader></app-loader>
+            </div>
+            
+            <div class="results" *ngIf="(questions)">
+              <ng-container *ngFor="let item of questions.questionsAnswers;let i=index">
+                <div  class="results-item">
+                  <div class="overlap-group">
+                    <textarea
+                    disabled
+                      class="q1 inter-normal-blue-zodiac-14px"
+                      name="q1"
+                      placeholder="Q1"
+                      type="text"
+                    >{{item.key}}</textarea>
+                  </div>
+                </div>
+                <div class="results-item">
+                  <div class="overlap-group-1">
+                    <textarea
+                    disabled
+                      class="a1 inter-normal-blue-zodiac-14px"
+                      name="a1"
+                      placeholder="Q1"
+                      type="text"
+                    >Answer:{{item.value}}</textarea>
+                  </div>
+                </div>
+              </ng-container>
+            
+              
+            
+            </div>
+          </div>
+     
+        </div>
+        <a >
+
+          <div class="get-started-btn">
+            <div class="q-types">
+              <input type="checkbox" formControlName="WH"id="WH" name="WH" class="checkbox-design" ><label for="WH" class="inter-alto-costmized"> WH-Questions</label><br>
+              <input type="checkbox" formControlName="MCQ" id="MCQ" name="MCQ" class="checkbox-design"><label for="MCQ" class="inter-alto-costmized"> MCQ</label><br>
+              <input type="checkbox" formControlName="COMPLETE"id="COMPLETE" name="COMPLETE"  class="checkbox-design" ><label for="COMPLETE" class="inter-alto-costmized"> Complete</label><br>
+              <input type="checkbox" formControlName="T_F" id="T_F" name="T_F" class="checkbox-design"><label for="T_F" class="inter-alto-costmized"> True or False</label><br>
+            </div>
+            <div class="overlap-group-3">
+              
+              <div (click)="submit()" class="generate">GENERATE</div></div>
+          </div>
+          </a
+        >
+      </div>
+    </form>
+  </div>

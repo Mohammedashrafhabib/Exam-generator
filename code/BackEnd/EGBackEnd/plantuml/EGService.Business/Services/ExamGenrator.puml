@@ -1,0 +1,12 @@
+@startuml
+class ExamGenrator {
+    + ExamGenrator(IConfiguration:IConfiguration, logger:ILoggerService)
+    + AnswerExtractionModel(Context:string) : IList<string>
+    + IntrogativeWordModel(Context:string, answer:string) : string
+    + QuestionGenrationModel(Context:string, Answers:IList<string>, IntrogativeWords:IList<string>) : IList<string>
+    + Distractors(context:string) : List<KeyValuePair<string, string[]>>
+    + Sent_Tokenizer(context:string) : List<string>
+    + Genarate(contextModel:contextModel) : ResultModel
+}
+IExamGenrator <|-- ExamGenrator
+@enduml

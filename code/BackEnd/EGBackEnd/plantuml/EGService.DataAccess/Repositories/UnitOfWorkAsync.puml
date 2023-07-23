@@ -1,0 +1,7 @@
+@startuml
+class UnitOfWorkAsync {
+    + UnitOfWorkAsync(context:EGServiceContext)
+    + <<async>> CommitAsync() : Task<int>
+}
+IUnitOfWorkAsync <|-- UnitOfWorkAsync
+@enduml

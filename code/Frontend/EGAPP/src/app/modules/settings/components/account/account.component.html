@@ -1,0 +1,52 @@
+<div class="container-center-horizontal">
+    <form class="settings-account-uiux screen" name="form10" [formGroup]="editForm">
+
+      <div class="flex-row">
+        <div class="side-links">
+          <div class="account inter-semi-bold-blue-zodiac-22px">Account</div>
+          <a routerLink="/settings/changePassword"
+            ><div class="password inter-semi-bold-blue-zodiac-22px">Password</div> </a
+          >
+        </div>
+        <div class="flex-col">
+          <div class="stname-input-container">
+            <div class="firstname-input">
+              <div class="first-name inter-normal-blue-zodiac-22-6px">First Name</div>
+              <div class="overlap-group">
+                <input class="alan inter-normal-black-22px" formControlName="firstname" name="alan" placeholder="Alan" type="text" />
+              </div>
+            </div>
+            <div class="lastname-input">
+              <div class="last-name">Last Name</div>
+              <div class="overlap-group">
+                <input class="john inter-normal-black-22px" formControlName="lastname" name="john" placeholder="John" type="text" />
+              </div>
+            </div>
+          </div>
+ 
+          <div class="email-input">
+            <div class="e-mail inter-normal-blue-zodiac-22-6px">E-mail</div>
+            <div class="overlap-group-1 overlap-group-3">
+              <input
+              formControlName="email"
+                class="alanj22gmailcom inter-normal-black-22px"
+                name="alanj22gmailcom"
+                placeholder="alanj22@gmail.com"
+                type="email"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex-col-1">
+
+
+          <div class="modify-btn" (click)="submit()">
+            <div class="overlap-group-2 overlap-group-3">
+              <div class="modify inter-semi-bold-white-22px">Modify</div>
+            </div>
+          </div>
+
+      </div>
+    </form>
+  </div>

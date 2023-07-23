@@ -1,0 +1,5 @@
+@startuml
+interface IExamGenrator {
+    + Genarate(Context:contextModel) : ResultModel
+}
+@enduml

@@ -1,0 +1,6 @@
+@startuml
+class CurrentUserViewModel {
+    + CurrentUserViewModel()
+    + Id : long <<get>> <<set>>
+}
+@enduml

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-07-05T02:22:15 EET" name="s" finished-at="2023-07-05T02:27:35 EET" duration-ms="320097">
+    <groups>
+    </groups>
+    <test started-at="2023-07-05T02:22:15 EET" name="t" finished-at="2023-07-05T02:27:35 EET" duration-ms="320097">
+      <class name="Tests.GenerateTests">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Tests.GenerateTests@bd4dc25]" started-at="2023-07-05T02:22:15 EET" name="setup" finished-at="2023-07-05T02:22:25 EET" duration-ms="10114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="generateQA(java.lang.String,java.lang.String)[pri:0, instance:Tests.GenerateTests@bd4dc25]" started-at="2023-07-05T02:22:25 EET" name="generateQA" finished-at="2023-07-05T02:27:35 EET" duration-ms="309638" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Lionel Messi, widely regarded as one of the greatest footballers of all time, is a name that resonates with excellence, skill, and unmatched talent. Born in Rosario, Argentina, Messi's journey in football began at a young age, showcasing his extraordinary abilities on the pitch. With mesmerizing dribbling skills, lightning-quick speed, and a lethal left foot, Messi has consistently astounded fans and critics alike. His close control of the ball and innate ability to navigate through defenses effortlessly make him a true maestro of the game. Messi's vision and playmaking abilities are unparalleled, as he effortlessly creates scoring opportunities for his teammates with pinpoint passes. Throughout his illustrious career, he has amassed numerous individual accolades and shattered countless records, including his astonishing number of goals. However, beyond the trophies and statistics, Messi's impact on the footballing world extends far beyond the numbers. His humility, dedication, and love for the game have endeared him to fans worldwide. Whether donning the colors of FC Barcelona, Paris Saint-Germain, or the Argentine national team, Messi continues to inspire future generations of footballers, leaving an indelible mark on the sport. Lionel Messi's name will forever be synonymous with footballing greatness, a living legend who has etched his name into the annals of the beautiful game.Lionel Messi, widely regarded as one of the greatest footballers of all time, is a name that resonates with excellence, skill, and unmatched talent. Born in Rosario, Argentina, Messi's journey in football began at a young age, showcasing his extraordinary abilities on the pitch. With mesmerizing dribbling skills, lightning-quick speed, and a lethal left foot, Messi has consistently astounded fans and critics alike. His close control of the ball and innate ability to navigate through defenses effortlessly make him a true maestro of the game. Messi's vision and playmaking abilities are unparalleled, as he effortlessly creates scoring opportunities for his teammates with pinpoint passes. Throughout his illustrious career, he has amassed numerous individual accolades and shattered countless records, including his astonishing number of goals. However, beyond the trophies and statistics, Messi's impact on the footballing world extends far beyond the numbers. His humility, dedication, and love for the game have endeared him to fans worldwide. Whether donning the colors of FC Barcelona, Paris Saint-Germain, or the Argentine national team, Messi continues to inspire future generations of footballers, leaving an indelible mark on the sport. Lionel Messi's name will forever be synonymous with footballing greatness, a living legend who has etched his name into the annals of the beautiful game.]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateQA -->
+        <test-method is-config="true" signature="quit()[pri:0, instance:Tests.GenerateTests@bd4dc25]" started-at="2023-07-05T02:27:35 EET" name="quit" finished-at="2023-07-05T02:27:35 EET" duration-ms="295" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quit -->
+      </class> <!-- Tests.GenerateTests -->
+    </test> <!-- t -->
+  </suite> <!-- s -->
+</testng-results>

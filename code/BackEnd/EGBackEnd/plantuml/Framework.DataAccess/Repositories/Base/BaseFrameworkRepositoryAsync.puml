@@ -1,0 +1,33 @@
+@startuml
+class "BaseFrameworkRepositoryAsync`2"<TEntity,TPrimeryKey> {
+    + BaseFrameworkRepositoryAsync(context:DbContext, currentUserService:ICurrentUserService)
+    + Dispose() : void
+    + DisposeAsync() : ValueTask
+    + <<virtual>> <<async>> GetCountAsync() : Task<long>
+    + <<virtual>> <<async>> GetCountAsync(predicate:Expression<Func<TEntity, bool>>) : Task<long>
+    + <<async>> SetIncludedNavigationsListAsync(source:IQueryable<TEntity>, list:IEnumerable<string>) : Task<IQueryable<TEntity>>
+    + <<async>> SetSortOrderAsync(source:IQueryable<TEntity>, sortOrder:string) : Task<IQueryable<TEntity>>
+    + <<async>> SetPaginationCountAsync(source:IQueryable<TEntity>, pagination:Pagination) : Task<Pagination>
+    + <<async>> SetPaginationAsync(source:IQueryable<TEntity>, pagination:Pagination) : Task<IQueryable<TEntity>>
+    + <<virtual>> <<async>> GetAsync(conditionFilter:RepositoryRequestConditionFilter<TEntity, TPrimeryKey>) : Task<IQueryable<TEntity>>
+    + <<virtual>> <<async>> GetAsync(repositoryRequest:RepositoryRequest) : Task<IQueryable<TEntity>>
+    + <<virtual>> <<async>> FirstOrDefaultAsync(predicate:Expression<Func<TEntity, bool>>, includedNavigationsList:string[]) : Task<TEntity>
+    + <<virtual>> <<async>> GetAsync(id:TPrimeryKey) : Task<TEntity>
+    + <<virtual>> <<async>> AddAsync(entityCollection:IEnumerable<TEntity>) : Task<IList<TEntity>>
+    + <<virtual>> <<async>> AddAsync(entity:TEntity) : Task<TEntity>
+    + <<virtual>> <<async>> UpdateAsync(entityCollection:IEnumerable<TEntity>) : Task<IQueryable<TEntity>>
+    + <<virtual>> <<async>> UpdateAsync(entity:TEntity) : Task<TEntity>
+    + <<virtual>> <<async>> DeleteAsync(id:TPrimeryKey) : Task
+    + <<virtual>> <<async>> DeleteAsync(idCollection:IEnumerable<TPrimeryKey>) : Task
+    + <<virtual>> <<async>> DeleteAsync(entity:TEntity) : Task
+    + <<virtual>> <<async>> DeleteAsync(entityCollection:IEnumerable<TEntity>) : Task
+    + <<async>> GetAsync(predicate:Expression<Func<TEntity, bool>>, includedNavigationsList:string[]) : Task<IList<TEntity>>
+}
+class "IBaseFrameworkRepositoryAsync`2"<T1,T2> {
+}
+class "IEntityIdentity`1"<T> {
+}
+IDisposable <|-- "BaseFrameworkRepositoryAsync`2"
+IAsyncDisposable <|-- "BaseFrameworkRepositoryAsync`2"
+"IBaseFrameworkRepositoryAsync`2" "<TEntity,TPrimeryKey>" <|-- "BaseFrameworkRepositoryAsync`2"
+@enduml

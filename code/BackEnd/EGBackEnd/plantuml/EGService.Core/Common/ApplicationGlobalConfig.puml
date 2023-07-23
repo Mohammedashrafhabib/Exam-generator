@@ -1,0 +1,10 @@
+@startuml
+class ApplicationGlobalConfig <<static>> {
+    + {static} EnableSeedOnMigration : bool <<get>> <<set>>
+}
+class Schema <<static>> {
+    + {static} DefaultSchema : string <<get>>
+    + {static} UserManagementSchema : string <<get>>
+}
+ApplicationGlobalConfig +-- Schema
+@enduml

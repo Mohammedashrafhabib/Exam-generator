@@ -1,0 +1,178 @@
+
+/* screen - home-uiux */
+
+
+  
+  .header {
+    background-color: transparent;
+    display: flex;
+    flex-shrink: 1;
+    height: 224px;
+    margin-left: -21px;
+    margin-top: -23px;
+    width: 1425px;
+  }
+  
+  .logo {
+    height: 201px;
+    margin-left: 21px;
+    margin-top: 23px;
+    object-fit: cover;
+    width: 812px;
+  }
+  
+  .overlap-group1 {
+    border-radius: 14px;
+    height: 45px;
+    position: relative;
+    width: 71px;
+  }
+  
+  .register:hover {
+    background-color: #4a79ae
+  }
+  
+  .place {
+    left: 6px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 13px;
+    width: 59px;
+  }
+  
+  .sign-in:hover {
+    background-color: #d8eaff
+  }
+  
+  .overlap-group2 {
+    align-items: center;
+    background-color: var(--white);
+    border-radius: 56px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 21px;
+    min-width: 1418px;
+  }
+  
+  .flex-col {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 68.0px;
+    min-height: 328px;
+    width: 626px;
+  }
+  
+  .easily-create-tests {
+    color: #102c4ee6;
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 96px;
+  }
+  
+  .create-a-quiz-to-gen {
+    letter-spacing: 0;
+    line-height: normal;
+    margin-top: 38px;
+    min-height: 54px;
+  }
+  
+  .get-started-btn {
+    align-items: flex-start;
+    cursor: pointer;
+    display: flex;
+    margin-left: 2px;
+    margin-top: 82px;
+    min-width: 287px;
+  }
+  
+  .overlap-group {
+    align-items: center;
+    background: linear-gradient(180deg, rgba(220, 62, 41, 0.94) 0%, rgb(63, 114, 175) 100%);
+    border-radius: 17px;
+    display: flex;
+    height: 58px;
+    min-width: 285px;
+    padding: 0 36.0px;
+  }
+  
+  .get-started {
+    color: var(--white);
+    cursor: pointer;
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-l);
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: normal;
+    min-height: 44px;
+    transition: all 0.2s ease;
+    width: 212px;
+  }
+  
+  .get-started:hover {
+    transform: scale(1.1);
+  }
+  
+  .side-photo {
+    height: 500px;
+    object-fit: cover;
+    width: 688px;
+  }
+  
+  .footer {
+    align-items: flex-start;
+    align-self: center;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    gap: 19px;
+    height: auto;
+    justify-content: flex-start;
+    margin-top: 161px;
+    min-height: 115px;
+    width: 1152px;
+  }
+  
+  .footer-line {
+    height: 1px;
+    margin-top: -1px;
+    object-fit: cover;
+    width: 1152px;
+  }
+  
+  .logo-in-footer {
+    height: 96px;
+    object-fit: cover;
+    width: 190px;
+  }
+  
+  .settings {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 90px;
+  }
+  
+  .terms-conditions {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 200px;
+  }
+  
+  .contact-us {
+    cursor: pointer;
+    height: 27px;
+    letter-spacing: 0;
+    line-height: normal;
+    width: 119px;
+  }
+  

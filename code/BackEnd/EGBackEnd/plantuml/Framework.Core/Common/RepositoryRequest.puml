@@ -1,0 +1,14 @@
+@startuml
+class RepositoryRequest {
+    + RepositoryRequest(repositoryRequest:RepositoryRequest)
+    + RepositoryRequest()
+    + Sorting : string <<get>> <<set>>
+}
+class "IList`1"<T> {
+}
+class "Nullable`1"<T> {
+}
+RepositoryRequest --> "Pagination" Pagination
+RepositoryRequest --> "IncludedNavigationsList<string>" "IList`1"
+RepositoryRequest --> "Order<Order>" "Nullable`1"
+@enduml

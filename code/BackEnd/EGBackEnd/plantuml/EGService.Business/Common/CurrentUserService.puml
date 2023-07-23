@@ -1,0 +1,7 @@
+@startuml
+class CurrentUserService {
+    + CurrentUserService(httpContext:IHttpContextAccessor)
+    + CurrentUserId : long? <<get>>
+}
+ICurrentUserService <|-- CurrentUserService
+@enduml

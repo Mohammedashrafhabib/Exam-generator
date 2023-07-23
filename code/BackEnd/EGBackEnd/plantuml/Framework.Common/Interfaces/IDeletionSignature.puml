@@ -1,0 +1,8 @@
+@startuml
+interface IDeletionSignature {
+    + IsDeleted : bool <<get>> <<set>>
+    + DeletionDate : DateTime? <<get>> <<set>>
+    + DeletedByUserId : long? <<get>> <<set>>
+    + MustDeletedPhysical : bool? <<get>> <<set>>
+}
+@enduml

@@ -1,0 +1,16 @@
+@startuml
+class UsersController {
+    + UsersController(UsersService:IUsersService)
+    + <<async>> GetAsync(id:long) : Task<UserViewModel>
+    + <<async>> AddAsync(model:UserViewModel) : Task<UserViewModel>
+    + <<async>> UpdateAsync(model:UserViewModel) : Task<UserViewModel>
+    + <<async>> DeleteAsync(id:long) : Task
+    + LoginInternal(model:LoginViewModel) : IActionResult
+    + <<async>> ChangePasswordAsync(model:ChangePasswordViewModel) : Task<IActionResult>
+    + <<async>> ResetPasswordAsync(userId:long) : Task<IActionResult>
+    + <<async>> GetCurrentUser() : Task<CurrentUserViewModel>
+    + <<async>> ForgotPassword(forgotPasswordModel:ForgotPasswordModel) : Task<bool>
+    + <<async>> GetDetails(id:long) : Task<UserDetailViewModel>
+}
+ControllerBase <|-- UsersController
+@enduml

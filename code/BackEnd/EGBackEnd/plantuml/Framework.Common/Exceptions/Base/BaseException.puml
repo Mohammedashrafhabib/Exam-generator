@@ -1,0 +1,11 @@
+@startuml
+class BaseException {
+    + BaseException()
+    + BaseException(message:string)
+    + BaseException(message:string, innerException:Exception)
+    + BaseException(errorCode:int)
+    + BaseException(errorCode:int, message:string)
+    + ErrorCode : int <<get>> <<set>>
+}
+ApplicationException <|-- BaseException
+@enduml

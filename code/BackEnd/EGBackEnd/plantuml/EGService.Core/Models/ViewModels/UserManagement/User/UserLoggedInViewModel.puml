@@ -1,0 +1,16 @@
+@startuml
+class UserLoggedInViewModel {
+    + access_token : string <<get>> <<set>>
+    + token_type : string <<get>> <<set>>
+    + expires_in : long <<get>> <<set>>
+    + Id : long <<get>> <<set>>
+    + UserName : string <<get>> <<set>>
+    + FirstName : string <<get>> <<set>>
+    + LastName : string <<get>> <<set>>
+    + Name : string <<get>> <<set>>
+    + Email : string <<get>> <<set>>
+    + issued : DateTime? <<get>> <<set>>
+    + expires : DateTime? <<get>> <<set>>
+    + IsFirstTimeLogin : bool <<get>> <<set>>
+}
+@enduml

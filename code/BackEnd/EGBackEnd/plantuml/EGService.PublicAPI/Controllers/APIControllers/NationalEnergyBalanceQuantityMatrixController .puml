@@ -1,0 +1,13 @@
+@startuml
+class NationalEnergyBalanceQuantityMatrixController {
+    + NationalEnergyBalanceQuantityMatrixController(NationalEnergyBalanceQuantityMatrixsService:INationalEnergyBalanceQuantityMatrixsService)
+    + <<async>> GetAsync(id:int) : Task<NationalEnergyBalanceQuantityMatrixsViewModel>
+    + <<async>> Search(searchModel:NationalEnergyBalanceQuantityMatrixsSearchModel) : Task<GenericResult<IList<NationalEnergyBalanceQuantityMatrixsLightViewModel>>>
+    + <<async>> searchForValue(searchModel:NationalEnergyBalanceQuantityMatrixsValueSearchModel) : Task<IList<NationalEnergyBalanceMatrixValueViewModel>>
+    + <<async>> ExportExcel(searchModel:NationalEnergyBalanceQuantityMatrixsValueSearchModel) : Task<IActionResult>
+    + <<async>> ExportCalorificExcel(searchModel:NationalEnergyBalanceQuantityMatrixsValueSearchModel) : Task<IActionResult>
+    + <<async>> GetValueMatrix(model:NationalEnergyBalanceMatrixSearchProductViewModel) : Task<IList<NationalEnergyBalanceMatrixResultProductViewModel>>
+    + <<async>> GetTimeSeries() : Task<List<TimeSeries_GDP_ProcResult>>
+}
+ControllerBase <|-- NationalEnergyBalanceQuantityMatrixController
+@enduml
